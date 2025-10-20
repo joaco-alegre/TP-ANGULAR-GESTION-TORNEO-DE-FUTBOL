@@ -1,0 +1,122 @@
+:root {
+  --color-primario: #007bff;     
+  --color-secundario: #1effa3;  
+  --color-fondo: #1a1a2e;      
+  --color-texto: #f0f0f0;
+  --color-header-gradiente: linear-gradient(90deg, var(--color-fondo), #16213e);
+}
+
+.main-header {
+  background: var(--color-header-gradiente);
+  border-bottom: 2px solid var(--color-primario);
+  padding: 0 20px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 70px;
+}
+
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-texto);
+  text-decoration: none;
+  /* Efecto neón en el logo */
+  text-shadow: 0 0 5px var(--color-secundario), 0 0 10px var(--color-secundario);
+}
+
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  margin-left: 25px;
+}
+
+.main-nav a {
+  color: var(--color-texto);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+
+.main-nav a:hover,
+.main-nav a.active { 
+  color: var(--color-secundario);
+  border-bottom: 2px solid var(--color-secundario);
+}
+
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-primario);
+  color: var(--color-primario);
+}
+.btn-secondary:hover {
+  background-color: var(--color-primario);
+  color: var(--color-fondo);
+}
+
+.btn-primary.cta-glow {
+  background-color: var(--color-secundario);
+  color: var(--color-fondo);
+  border: 2px solid var(--color-secundario);
+  box-shadow: 0 0 10px var(--color-secundario), 0 0 20px var(--color-secundario);
+}
+.btn-primary.cta-glow:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--color-secundario), 0 0 30px var(--color-secundario);
+}
+
+
+.menu-toggle {
+  display: none; 
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-texto);
+  margin: 5px 0;
+}
+
+/*
+@media (max-width: 768px) {
+  .main-nav, .action-buttons {
+    display: none; 
+  }
+  .menu-toggle {
+    display: block;
+  }
+}*/

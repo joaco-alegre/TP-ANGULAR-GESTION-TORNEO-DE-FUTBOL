@@ -1,0 +1,17 @@
+<h2>{{ equipoID ? 'Editar Equipo' : 'Agregar Equipo' }}</h2>
+
+<form [formGroup]="equipoForm" (ngSubmit)="onSubmit()">
+    
+  <label for="nombre">Nombre</label>
+  <input id="nombre" formControlName="nombre">
+
+  <label for="torneo">Nombre del Torneo</label>
+  <input id="torneo" formControlName="nombreTorneo">
+
+<label for="dt">Nombre del DT</label>
+  <input id="dt" formControlName="dt">
+
+  <button type="submit">{{ equipoID ? 'Actualizar' : 'Agregar' }}</button>
+</form>
+
+

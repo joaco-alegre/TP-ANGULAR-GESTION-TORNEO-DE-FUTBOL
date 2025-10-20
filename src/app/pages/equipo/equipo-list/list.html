@@ -1,0 +1,13 @@
+<h2>Lista de equipos</h2>
+
+<ul>
+    @for (equipo of equipos; track $index) {
+        <li>
+             {{ equipo.nombre }} - ({{ equipo.nombreTorneo }} - {{equipo.DT}})
+            <button [routerLink]="['/equipos', equipo.id]">Detalles</button>
+            <button (click)="deleteEquipo(equipo.id!)">Eliminar</button>
+        </li>
+    }
+</ul>
+
+<button class="" [routerLink]="['/add']">Agregar Equipo</button>

@@ -1,0 +1,34 @@
+{
+  "equipos": [
+    {
+      "id": "1",
+      "nombre": "Boca Juniors",
+      "nombreTorneo": "1",
+      "DT": "Diego Martínez"
+    },
+    {
+      "id": "2",
+      "nombre": "River Plate",
+      "nombreTorneo": "1",
+      "DT": "Martín Demichelis"
+    },
+    {
+      "id": "3",
+      "nombre": "Independiente",
+      "nombreTorneo": "2",
+      "DT": "Julio Vaccari"
+    },
+    {
+      "id": "4",
+      "nombre": "Racing Club",
+      "nombreTorneo": "1",
+      "DT": "Gustavo Costas"
+    },
+    {
+      "id": "5",
+      "nombre": "San Lorenzo",
+      "nombreTorneo": "2",
+      "DT": "Leandro Romagnoli"
+    }
+  ]
+}
