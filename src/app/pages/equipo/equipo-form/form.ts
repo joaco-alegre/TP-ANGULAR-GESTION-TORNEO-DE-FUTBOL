@@ -26,10 +26,12 @@ export class Form implements OnInit{
   ) {}
 
   ngOnInit(): void {
-   /* this.equipoForm = this.fb.group({
-      nombre: ['', Validators.required],
-      nombreTorneo: ['', [Validators.required, Validators.min(1900)]]
-    });*/
+    this.equipoForm = this.fb.group({
+      id: ['', [Validators.required]],
+      nombre: ['', [Validators.required]],
+      nombreTorneo: ['', [Validators.required]],
+      DT: ['', [Validators.required]]
+    });
 
     this.equipoID = this.route.snapshot.params['id'];
     if (this.equipoID) {

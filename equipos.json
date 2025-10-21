@@ -17,18 +17,6 @@
       "nombre": "Independiente",
       "nombreTorneo": "2",
       "DT": "Julio Vaccari"
-    },
-    {
-      "id": "4",
-      "nombre": "Racing Club",
-      "nombreTorneo": "1",
-      "DT": "Gustavo Costas"
-    },
-    {
-      "id": "5",
-      "nombre": "San Lorenzo",
-      "nombreTorneo": "2",
-      "DT": "Leandro Romagnoli"
     }
   ]
 }

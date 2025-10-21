@@ -10,7 +10,7 @@ import Equipo from '../../model/equipo';
 export class EquipoService{
 
       private url = 'http://localhost:3000/equipos'; 
-    private nextId   = 1;
+    //private nextId   = 1;
 
   constructor(private http: HttpClient) {}
 
@@ -24,7 +24,7 @@ export class EquipoService{
 
 
   postEquipo(equipo: Equipo): Observable<Equipo> {
-     equipo.id = this.nextId++;
+    //equipo.id = this.nextId++;
     return this.http.post<Equipo>(this.url, equipo);
   }
 
