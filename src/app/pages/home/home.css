@@ -1,0 +1,30 @@
+.home-container {
+
+  background-image: url('/assets/img/mario-klassen-70YxSTWa2Zw-unsplash.jpg'); 
+  background-size: cover; 
+  background-position: center center; 
+  background-repeat: no-repeat; 
+  min-height: 105vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  color: white; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+.home-container h1 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+.home-container p {
+  font-size: 1.2em;
+  max-width: 700px;
+  line-height: 1.5;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}

@@ -1,154 +1,109 @@
-:root {
-  --color-primario: #007bff;     
-  --color-secundario: #1effa3;  
-  --color-fondo: #1a1a2e;      
-  --color-texto: #f0f0f0;
-  --color-header-gradiente: linear-gradient(90deg, var(--color-fondo), #16213e);
+
+nav{
+  font-size: 18px;
 }
 
-.main-header {
-  background: var(--color-header-gradiente);
-  border-bottom: 2px solid var(--color-primario);
+:host {
+  display: block; /* Asegura que el header ocupe el ancho */
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  align-items: center; 
+  background-color: #00334e; 
+  color: white; 
+  font-family: Arial, sans-serif;
+  
+  /* 👇 AÑADE ESTA LÍNEA 👇 */
+  height: 110px; /* O el valor que quieras que tenga la barra */
+
+  /* 👇 AJUSTA EL PADDING 👇 */
+  /* Quitamos el padding vertical (arriba/abajo) 
+     porque ahora usamos 'height' */
   padding: 0 20px;
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
 }
 
-.header-container {
+/* 1. Logo *//*
+.navbar-logo img {
+  height: 40px; 
+}
+*/
+/* 2. Links de navegación */
+.navbar-links {
+  /* Esta es la CLAVE: 
+     Mueve este elemento (y todo lo que le sigue) 
+     hacia la derecha. */
+  margin-left: auto; 
+  
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 70px;
-}
-
-
-.logo a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--color-texto);
-  text-decoration: none;
-  /* Efecto neón en el logo */
-  text-shadow: 0 0 5px var(--color-secundario), 0 0 10px var(--color-secundario);
-}
-
-
-.main-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
+  list-style: none; /* Saca los puntitos de la lista */
   padding: 0;
+  margin-right: 20px; /* Espacio antes del idioma */
 }
 
-.main-nav li {
-  margin-left: 25px;
+.navbar-links li {
+  padding: 0 15px; /* Espacio entre cada link */
 }
 
-.main-nav a {
-  color: var(--color-texto);
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 500;
-  padding-bottom: 5px;
-  transition: all 0.3s ease;
-}
-
-
-.main-nav a:hover,
-.main-nav a.active { 
-  color: var(--color-secundario);
-  border-bottom: 2px solid var(--color-secundario);
-}
-
-
-.action-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.btn {
-  border: none;
-  padding: 10px 18px;
-  border-radius: 5px;
+.navbar-links a {
+  text-decoration: none; /* Saca el subrayado */
+  color: white;
   font-weight: bold;
+}
+
+/* 3. Idioma */
+.navbar-lang {
+  margin-right: 20px; /* Espacio antes del menú de 3 puntos */
   cursor: pointer;
-  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
-.btn-secondary {
-  background-color: transparent;
-  border: 2px solid var(--color-primario);
-  color: var(--color-primario);
-}
-.btn-secondary:hover {
-  background-color: var(--color-primario);
-  color: var(--color-fondo);
+.navbar-lang span:hover {
+  color: #f36c21; /* Un color naranja como el de "Academy" en tu foto */
 }
 
-.btn-primary.cta-glow {
-  background-color: var(--color-secundario);
-  color: var(--color-fondo);
-  border: 2px solid var(--color-secundario);
-  box-shadow: 0 0 10px var(--color-secundario), 0 0 20px var(--color-secundario);
-}
-.btn-primary.cta-glow:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 15px var(--color-secundario), 0 0 30px var(--color-secundario);
-}
-
-
-.menu-toggle {
-  display: none; 
+/* 4. Botón de Menú */
+.navbar-menu-btn {
   background: none;
   border: none;
+  color: white;
   cursor: pointer;
-}
-.menu-toggle span {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: var(--color-texto);
-  margin: 5px 0;
-}
-
-/*
-@media (max-width: 768px) {
-  .main-nav, .action-buttons {
-    display: none; 
-  }
-  .menu-toggle {
-    display: block;
-  }
-}*/
-
-.language-switcher {
+  padding: 0;
   display: flex;
   align-items: center;
-  gap: 8px; /* Un poco más de espacio para el separador */
+  justify-content: center;
 }
 
-.lang-link {
-  display: flex; /* Para alinear el texto y el emoji */
-  align-items: center;
-  gap: 5px; /* Espacio entre el texto (ES) y el emoji (🇪🇸) */
+.navbar-menu-btn .material-icons {
+  font-size: 28px; /* Tamaño del ícono */
+}
 
-  color: #b0b0d0; /* Color sutil */
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-decoration: none;
+/* (Opcional) Efecto hover simple */
+.navbar-links a:hover,
+.navbar-menu-btn:hover {
+  color: #f36c21; /* Color naranja al pasar el mouse */
+}
+
+.navbar-logo img {
+  /* Asumamos que tu logo es más grande que la barra */
+  height: 200px; /* Por ejemplo */
+  width: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-logo img:hover {
+  opacity: 0.8; 
   cursor: pointer;
-  transition: color 0.3s ease;
+  border-radius: 50%; 
+border-radius: 8px; 
 }
 
-.lang-link:hover {
-  color: #f0f0f0; /* Color principal al pasar el mouse */
-}
+.navbar-logo img:hover {
+  /* Pone el logo en escala de grises */
+  filter: grayscale(100%); 
 
-.lang-link.active {
-  color: var(--color-secundario); /* El verde neón */
-}
-
-.lang-separator {
-  color: var(--color-primario); /* El azul */
-  font-size: 1rem;
+  /* Le da un poco de brillo */
+  filter: brightness(1.2); 
 }
