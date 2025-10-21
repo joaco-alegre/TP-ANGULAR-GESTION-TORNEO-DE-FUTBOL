@@ -3,9 +3,9 @@
 <ul>
     @for (equipo of equipos; track $index) {
         <li>
-             {{ equipo.nombre }} - ({{ equipo.nombreTorneo }} - {{equipo.DT}})
+             {{ equipo.nombre }} - ({{ equipo.nombreTorneo }}
             <button [routerLink]="['/equipos', equipo.id]">Detalles</button>
-            <button (click)="deleteEquipo(equipo.id!)">Eliminar</button>
+            <!-- <button (click)="deleteEquipo(equipo.id!)">Eliminar</button> -->
         </li>
     }
 </ul>

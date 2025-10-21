@@ -120,3 +120,35 @@
     display: block;
   }
 }*/
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Un poco más de espacio para el separador */
+}
+
+.lang-link {
+  display: flex; /* Para alinear el texto y el emoji */
+  align-items: center;
+  gap: 5px; /* Espacio entre el texto (ES) y el emoji (🇪🇸) */
+
+  color: #b0b0d0; /* Color sutil */
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.lang-link:hover {
+  color: #f0f0f0; /* Color principal al pasar el mouse */
+}
+
+.lang-link.active {
+  color: var(--color-secundario); /* El verde neón */
+}
+
+.lang-separator {
+  color: var(--color-primario); /* El azul */
+  font-size: 1rem;
+}
