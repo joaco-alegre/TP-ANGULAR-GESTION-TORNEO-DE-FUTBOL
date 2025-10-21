@@ -1,103 +1,67 @@
-/* Usamos las variables de color del header si queremos, o definimos nuevas */
-:root {
-  --color-fondo-footer: #1a1a2e; /* Mismo fondo oscuro */
-  --color-texto-footer: #b0b0d0;
-  --color-links: #1effa3; /* Verde neón para links */
+:host {
+  display: block;
+  width: 100%;
 }
 
 .main-footer {
-  background-color: var(--color-fondo-footer);
-  color: var(--color-texto-footer);
-  padding: 40px 20px;
-  border-top: 2px solid var(--color-primario);
+  /* 1. Paleta de colores del Header */
+  background-color: #00334e; /* Mismo azul oscuro */
+  color: white;
+  font-family: Arial, sans-serif;
+  
+  /* 2. Espaciado */
+  padding: 40px 20px; /* Más padding que el header */
+  margin-top: auto; /* ¡Esta es la magia! (ver Paso 2) */
 }
 
 .footer-container {
+  max-width: 1200px; /* Limita el ancho en pantallas grandes */
+  margin: 0 auto; /* Centra el contenido */
+  
+  /* 3. Layout de 3 columnas */
   display: flex;
-  justify-content: space-around;
-  max-width: 1200px;
-  margin: 0 auto;
-  /* Responsive: En pantallas chicas, se envuelven */
-  flex-wrap: wrap; 
-  gap: 20px; /* Espacio entre secciones cuando se envuelven */
+  justify-content: space-between; /* Espacia las columnas */
+  align-items: flex-start; /* Alinea arriba */
+  flex-wrap: wrap; /* Permite que se apilen en pantallas chicas */
+  gap: 20px; /* Espacio entre secciones si se envuelven */
 }
 
 .footer-section {
-  flex: 1; /* Ocupan espacio equitativo */
-  min-width: 200px; /* Ancho mínimo antes de envolverse */
+  flex: 1; /* Cada sección trata de ocupar el mismo espacio */
+  min-width: 250px; /* Ancho mínimo antes de apilarse */
 }
 
+/* 4. Estilos de texto */
 .footer-section h4 {
-  color: #fff;
   font-size: 1.2rem;
+  font-weight: bold;
   margin-bottom: 15px;
-  border-bottom: 1px solid var(--color-primario);
-  padding-bottom: 5px;
+  /* Usamos el color de acento para los títulos */
+  color: #f36c21; 
 }
 
 .footer-section p {
-  margin: 5px 0;
   font-size: 0.9rem;
+  color: #ccc; /* Un gris claro para texto secundario */
+  line-height: 1.5;
+  margin: 5px 0;
 }
 
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section ul li a {
-  color: var(--color-texto-footer);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-  color: var(--color-links);
-  text-shadow: 0 0 5px var(--color-links);
-}
-
-/* --- Íconos de Redes Sociales Coloridos --- */
+/* 5. Estilos de íconos sociales */
 .social-icons {
   display: flex;
-  gap: 15px;
+  gap: 15px; /* Espacio entre íconos */
 }
 
 .social-icon {
-  font-size: 1.5rem;
-  color: var(--color-texto-footer);
-  transition: all 0.3s ease;
-}
-/* Colores "On Hover" (¡La parte divertida!) */
-.social-icon.facebook:hover {
-  color: #1877F2;
-  transform: scale(1.2);
-}
-.social-icon.twitter:hover {
-  color: #1DA1F2;
-  transform: scale(1.2);
-}
-.social-icon.instagram:hover {
-  color: #E4405F;
-  transform: scale(1.2);
-}
-.social-icon.twitch:hover {
-  color: #9146FF;
-  transform: scale(1.2);
+  color: white; /* Color base del ícono */
+  font-size: 1.5rem; /* Tamaño del ícono */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-/* 1. El Contenedor General */
-app-root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Mínimo 100% de la altura de la pantalla */
-}
-
-/* 2. El Contenido que "crece" */
-.main-content {
-  flex-grow: 1; /* ¡Esta es la línea mágica! */
+/* 6. Efecto Hover (usando el color de acento) */
+.social-icon:hover {
+  color: #f36c21; /* Naranja al pasar el mouse */
+  transform: scale(1.1); /* Efecto sutil */
 }

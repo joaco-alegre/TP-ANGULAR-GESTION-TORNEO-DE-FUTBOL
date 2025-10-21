@@ -28,3 +28,31 @@
   line-height: 1.5;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
+
+.btn-primary {
+  /* Apariencia */
+  display: inline-block; /* Permite que tenga padding */
+  padding: 20px 36px; /* Espaciado interno (vertical | horizontal) */
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white; /* Color del texto */
+  background-color: #00334e; /* Un color naranja (como el de tu header) */
+  border: none;
+  border-radius: 5px; /* Bordes redondeados */
+  
+  /* Comportamiento */
+  text-decoration: none; /* Saca el subrayado del link */
+  text-align: center;
+  cursor: pointer;
+  
+  /* Efectos */
+  margin-top: 20px; /* Espacio para separarlo del párrafo de arriba */
+  transition: background-color 0.3s ease; /* Transición suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Efecto al pasar el mouse por encima */
+.btn-primary:hover {
+  background-color: #002235; /* Un naranja un poco más oscuro */
+  color: white;
+}

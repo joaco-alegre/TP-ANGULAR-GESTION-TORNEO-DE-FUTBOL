@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import Equipo from '../../../model/equipo';
 import { EquipoService } from '../../../service/equipo-service/equipo-service';
 import { CommonModule } from '@angular/common';
@@ -7,19 +7,31 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-list',
   imports: [CommonModule, RouterModule],
-  templateUrl: './list.html',
-  styleUrl: './list.css'
+  templateUrl: './equipo-List.html',
+  styleUrl: './equipo-List.css'
 })
-export class List implements OnInit{
+export class EquipoList implements OnInit{
 
-  equipos: Equipo[] = [];
+  @Input() id!: string;
+
+  todosEquipos: Equipo[] = [];
+  filtrarEquipos: Equipo[] = [];
 
   constructor(private equipoService: EquipoService) {}
 
   ngOnInit(): void {
-    this.getEquipos();
+    this.filtrarEquiposPorTorneo();
   }
 
+  filtrarEquiposPorTorneo(): void {
+    if (this.id) {
+      this.filtrarEquipos = this.todosEquipos.filter(
+        (equipo) => equipo.idTorneo === this.id
+      );
+    }
+  }
+
+/*
   getEquipos(): void {
     this.equipoService.getEquipos().subscribe(data => {
       console.log(data)
@@ -30,6 +42,8 @@ export class List implements OnInit{
   
       this.equipoService.deleteEquipo(id).subscribe(() => this.getEquipos());
     
-  }
+  }*/
   
 }
+
+

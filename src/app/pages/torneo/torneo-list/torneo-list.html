@@ -1,1 +1,9 @@
-<p>torneo-list works!</p>
+<h2>Lista de Torneos</h2>
+
+<ul>
+    @for (torneo of torneos; track torneo.id) {
+    <li [routerLink]="['/es/torneos/', torneo.id]">
+      {{ torneo.nombre }}
+    </li>
+    }
+</ul>
