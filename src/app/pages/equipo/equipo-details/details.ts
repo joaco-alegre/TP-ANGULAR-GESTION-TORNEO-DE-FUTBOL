@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './details.html',
   styleUrl: './details.css'
 })
-export class Details implements OnInit{
+export class EquipoDetails implements OnInit{
 
   equipo?: Equipo;
 
@@ -18,11 +18,12 @@ export class Details implements OnInit{
     private route: ActivatedRoute
   ) {}
 
+  /*
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
-    this.equipoService.getEquipoById(+id).subscribe(data => this.equipo = data);
+    this.equipoService.getEquipoById(+id).subscribe(data => this.equipo = data);*/
   }
 
 
 
-}
+

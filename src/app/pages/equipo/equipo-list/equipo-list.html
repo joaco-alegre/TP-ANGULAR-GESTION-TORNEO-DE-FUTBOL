@@ -1,10 +1,16 @@
 <h2>Lista de equipos</h2>
 
 <ul>
-    @for (equipo of filtrarEquipos; track @index) {
-        <li>
-             {{equipo.nombre}}
-        </li>
-    }
+  @for (equipo of filtrarEquipos; track equipo.id) {
+    <li>
+      <!-- <img 
+        [src]="equipo.escudo" 
+        [alt]="'Escudo de ' + equipo.nombre" 
+        class="team-crest"> -->
+      
+      <span class="team-name">{{ equipo.nombre }}</span>
+    </li>
+  } @empty {
+    <p>No hay equipos registrados en este torneo.</p>
+  }
 </ul>
-

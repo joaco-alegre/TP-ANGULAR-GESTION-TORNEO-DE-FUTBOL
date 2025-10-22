@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Torneo from '../../../model/torneo';
-import { torneoService } from '../../../service/torneo-service/torneo-service';
+import { TorneoService } from '../../../service/torneo-service/torneo-service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -15,7 +15,7 @@ export class TorneoList implements OnInit{
   
     torneos: Torneo[] = [];
   
-    constructor(private torneoService: torneoService) {}
+    constructor(private torneoService: TorneoService) {}
   
     ngOnInit(): void {
       this.getTorneos();

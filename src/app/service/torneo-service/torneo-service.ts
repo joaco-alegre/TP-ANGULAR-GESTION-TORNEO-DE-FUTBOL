@@ -7,7 +7,7 @@ import Torneo from '../../model/torneo';
   providedIn: 'root'
 })
 
-export class torneoService{
+export class TorneoService{
 
       private url = 'http://localhost:3000/torneos'; 
     private nextId   = 1;

@@ -7,8 +7,8 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-list',
   imports: [CommonModule, RouterModule],
-  templateUrl: './equipo-List.html',
-  styleUrl: './equipo-List.css'
+  templateUrl: './equipo-list.html',
+  styleUrl: './equipo-list.css'
 })
 export class EquipoList implements OnInit{
 
@@ -20,7 +20,14 @@ export class EquipoList implements OnInit{
   constructor(private equipoService: EquipoService) {}
 
   ngOnInit(): void {
-    this.filtrarEquiposPorTorneo();
+    console.log('ID del torneo recibido:', this.id); 
+
+    this.equipoService.getEquipos().subscribe(data => {
+      
+      console.log('Datos recibidos del servicio:', data); 
+      this.todosEquipos = data;
+      this.filtrarEquiposPorTorneo();
+    });
   }
 
   filtrarEquiposPorTorneo(): void {
@@ -28,6 +35,7 @@ export class EquipoList implements OnInit{
       this.filtrarEquipos = this.todosEquipos.filter(
         (equipo) => equipo.idTorneo === this.id
       );
+      console.log('Equipos filtrados:', this.filtrarEquipos);
     }
   }
 

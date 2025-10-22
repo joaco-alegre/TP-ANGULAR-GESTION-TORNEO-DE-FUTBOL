@@ -32,12 +32,12 @@ export class Form implements OnInit{
       nombreTorneo: ['', [Validators.required]],
       DT: ['', [Validators.required]]
     });
-
+/*
     this.equipoID = this.route.snapshot.params['id'];
     if (this.equipoID) {
       this.equipoService.getEquipoById(this.equipoID)
         .subscribe(equipo => this.equipoForm.patchValue(equipo));
-    }
+    }*/
   }
 
   onSubmit(): void {

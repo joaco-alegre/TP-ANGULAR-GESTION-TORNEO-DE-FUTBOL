@@ -18,47 +18,36 @@ h2 {
   padding-bottom: 10px; /* Espacio entre el texto y la línea */
 }
 
-/* --- Lista (ul) --- */
 ul {
-  list-style: none; /* Saca los puntitos (bullets) */
+  list-style: none; 
   padding: 0;
   margin: 0;
-  display: grid; /* Usamos CSS Grid para las columnas */
-  
-  /* Esto crea columnas automáticas. 
-     Cada tarjeta tendrá MÍNIMO 250px de ancho.
-     Si hay más espacio, se ajustan. */
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  
-  gap: 20px; /* Espacio entre cada tarjeta */
+  display: flex; 
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* --- Tarjeta de Torneo (li) --- */
 li {
-  background-color: #ffffff; /* Fondo blanco */
-  border: 1px solid #e0e0e0; /* Borde gris claro */
-  border-radius: 8px; /* Bordes redondeados */
-  padding: 20px; /* Espaciado interno */
-  
-  /* Sombra sutil para darle profundidad */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); 
-  
-  /* Transición suave para el hover */
+  /* --- Estilos que ya tenías --- */
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  
   font-size: 1.2em;
   font-weight: 600;
   color: #333;
+  padding: 20px; 
+  min-height: 120px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
-/* --- Efecto Hover (al pasar el mouse) --- */
+/* (Opcional) Mantenemos el hover */
 li:hover {
-  /* Levanta la tarjeta ligeramente */
   transform: translateY(-5px); 
-  
-  /* Aumenta la sombra para destacarla */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  
-  cursor: pointer; /* Indica que es clickeable */
-  border-color: #f36c21; /* Resalta el borde con el color naranja */
+  cursor: pointer;
+  border-color: #f36c21;
 }
