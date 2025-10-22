@@ -1,0 +1,17 @@
+<h2>Lista de Jugadores</h2>
+
+<ul>
+  @for (jugador of filtrarJugadores; track jugador.id) {
+    <li>
+      <!-- <img 
+        [src]="equipo.escudo" 
+        [alt]="'Escudo de ' + equipo.nombre" 
+        class="team-crest"> -->
+      
+      <span class="jugador-name">{{ jugador.nombre }}</span>
+      <span class="jugador-name">{{ jugador.numeroCamiseta }}</span>
+    </li>
+  } @empty {
+    <p>No hay jugadores registrados en este equipo.</p>
+  }
+</ul>

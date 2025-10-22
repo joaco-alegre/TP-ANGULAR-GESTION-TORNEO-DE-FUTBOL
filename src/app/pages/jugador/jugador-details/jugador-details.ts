@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import Jugador from '../../../model/jugador';
+import { JugadorService } from '../../../service/jugador-service/jugador-service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-jugador-details',
@@ -6,6 +9,19 @@ import { Component } from '@angular/core';
   templateUrl: './jugador-details.html',
   styleUrl: './jugador-details.css'
 })
-export class JugadorDetails {
+export class JugadorDetails implements OnInit{
 
+    jugador?: Jugador;
+
+  constructor(
+    private JugaodrService: JugadorService,
+    private route: ActivatedRoute
+  ) {}
+
+  
+  ngOnInit(): void {
+    const id = this.route.snapshot.params['id'];
+    this.JugaodrService.getJugadorById(id).subscribe(data => this.jugador = data);
+
+  }
 }

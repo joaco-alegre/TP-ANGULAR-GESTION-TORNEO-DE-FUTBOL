@@ -8,10 +8,10 @@ import Equipo from '../../../model/equipo';
 @Component({
   selector: 'app-form',
   imports: [ReactiveFormsModule, CommonModule, RouterModule],
-  templateUrl: './form.html',
-  styleUrl: './form.css'
+  templateUrl: './equipo-form.html',
+  styleUrl: './equipo-form.css'
 })
-export class Form implements OnInit{
+export class EquipoForm implements OnInit{
 
 
   

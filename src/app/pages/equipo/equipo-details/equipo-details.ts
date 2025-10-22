@@ -6,10 +6,10 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-details',
   imports: [],
-  templateUrl: './details.html',
-  styleUrl: './details.css'
+  templateUrl: './equipo-details.html',
+  styleUrl: './equipo-details.css'
 })
-export class EquipoDetails implements OnInit{
+export class EquipoDetails{
 
   equipo?: Equipo;
 

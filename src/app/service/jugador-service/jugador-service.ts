@@ -10,12 +10,12 @@ import { Observable } from 'rxjs';
 
 export class JugadorService{
 
-      private url = 'http://localhost:3000/jugadores'; 
+      private url = 'http://localhost:3002/jugadores'; 
     private nextId   = 1;
 
   constructor(private http: HttpClient) {}
 
-  getJugador(): Observable<Jugador[]> {
+  getJugadores(): Observable<Jugador[]> {
     return this.http.get<Jugador[]>(this.url);
   }
 
@@ -33,7 +33,7 @@ export class JugadorService{
     return this.http.put<Jugador>(`${this.url}/${jugador.id}`, jugador);
   }
 
-  deleteJugador(id: number): Observable<void> {
+  deleteJugador(id: string): Observable<void> {
     return this.http.delete<void>(`${this.url}/${id}`);
   }
 

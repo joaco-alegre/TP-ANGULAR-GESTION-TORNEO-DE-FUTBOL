@@ -1,5 +1,5 @@
 <header class="main-header">
-<nav class="navbar">
+<nav class="navbar"  [ngClass]="{'navbar-scrolled': isScrolled}">
   
   <div class="navbar-logo">
     <a routerLink="/es">
@@ -16,7 +16,7 @@
   </ul>
 
   <div class="navbar-lang">
-    <span>ES</span> | <span>EN</span>
+    <span>ES </span>|<span> EN</span>
   </div>
 
   <button class="navbar-menu-btn">
