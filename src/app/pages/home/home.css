@@ -1,5 +1,4 @@
 .home-container {
-
   background-image: url('/assets/img/mario-klassen-70YxSTWa2Zw-unsplash.jpg'); 
   background-size: cover; 
   background-position: center center; 
@@ -13,6 +12,8 @@
   color: white; 
   padding: 20px;
   box-sizing: border-box;
+  /*filter: blur(1px);
+  transform: scale(1.02); */
 }
 
 
@@ -30,29 +31,26 @@
 }
 
 .btn-primary {
-  /* Apariencia */
-  display: inline-block; /* Permite que tenga padding */
-  padding: 20px 36px; /* Espaciado interno (vertical | horizontal) */
+  display: inline-block; 
+  padding: 20px 36px; 
   font-size: 1.4em;
   font-weight: bold;
-  color: white; /* Color del texto */
-  background-color: #00334e; /* Un color naranja (como el de tu header) */
+  color: white; 
+  background-color: #034c69;  
   border: none;
-  border-radius: 5px; /* Bordes redondeados */
-  
-  /* Comportamiento */
-  text-decoration: none; /* Saca el subrayado del link */
+  border-radius: 5px; 
+  text-decoration: none; 
   text-align: center;
   cursor: pointer;
-  
-  /* Efectos */
-  margin-top: 20px; /* Espacio para separarlo del párrafo de arriba */
-  transition: background-color 0.3s ease; /* Transición suave */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  margin-top: 20px; 
+  transition: background-color 0.3s ease; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-/* Efecto al pasar el mouse por encima */
 .btn-primary:hover {
-  background-color: #002235; /* Un naranja un poco más oscuro */
+  background-color: #00263a; 
   color: white;
+  transform: scale(1.11);
 }
+
