@@ -3,7 +3,7 @@
 <ul>
     @for (torneo of torneos; track torneo.id) {
     <li [routerLink]="['/es/torneos/', torneo.id]">
-      {{ torneo.nombre }}
+      {{torneo.nombre}}
     </li>
     }
 </ul>

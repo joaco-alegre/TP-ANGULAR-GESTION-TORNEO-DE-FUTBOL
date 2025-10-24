@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Jugador from '../../../model/jugador';
 import { JugadorService } from '../../../service/jugador-service/jugador-service';
 import { ActivatedRoute } from '@angular/router';
+import EstadisticaGoleador from '../../../model/estadistica-goleador';
 
 @Component({
   selector: 'app-jugador-details',
@@ -12,6 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 export class JugadorDetails implements OnInit{
 
     jugador?: Jugador;
+    estadisticaGoleador?: EstadisticaGoleador;
 
   constructor(
     private JugaodrService: JugadorService,

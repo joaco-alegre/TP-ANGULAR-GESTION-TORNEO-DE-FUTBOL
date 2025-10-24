@@ -1,10 +1,22 @@
+<h2>{{jugador?.nombre}}</h2>
 
+<h3>Detalles del Jugador</h3>
 @if(jugador){
     <div>
+    <img src="" alt="">
     <p><b>Nombre:</b> {{ jugador.nombre }}</p>
     <p><b>Edad:</b> {{ jugador.edad }}</p>
     <p><b>Nombre:</b> {{ jugador.fechaNacimiento}}</p>
     <p><b>Numero de Camiseta:</b> {{ jugador.numeroCamiseta}}</p>
+  </div>
+}
+
+
+<h3>Estadisticas del jugador</h3>
+
+@if(estadisticaGoleador){
+    <div>
+    <p><b>cantidad de Goles:</b> {{ estadisticaGoleador.cantidadGoles }}</p>
   </div>
 }
 

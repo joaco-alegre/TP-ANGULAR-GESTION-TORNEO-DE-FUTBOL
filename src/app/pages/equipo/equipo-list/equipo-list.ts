@@ -2,7 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import Equipo from '../../../model/equipo';
 import { EquipoService } from '../../../service/equipo-service/equipo-service';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import Torneo from '../../../model/torneo';
+import dt from '../../../model/dt';
+import DT from '../../../model/dt';
+import Fixture from '../../../model/fixture';
 
 @Component({
   selector: 'app-list',
@@ -14,10 +18,17 @@ export class EquipoList implements OnInit{
 
   @Input() id!: string;
 
+  torneo?: Torneo;
+  equipo?: Equipo;
+  directorT:? DT;
+
   todosEquipos: Equipo[] = [];
   filtrarEquipos: Equipo[] = [];
 
-  constructor(private equipoService: EquipoService) {}
+
+  constructor(private equipoService: EquipoService,
+              private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     console.log('ID del torneo recibido:', this.id); 
@@ -39,6 +50,7 @@ export class EquipoList implements OnInit{
     }
   }
 
+
 /*
   getEquipos(): void {
     this.equipoService.getEquipos().subscribe(data => {
@@ -46,7 +58,7 @@ export class EquipoList implements OnInit{
       this.equipos = data});
   }
 
-  deleteEquipo(id: number): void {
+  deleteEquipo(id: string): void {
   
       this.equipoService.deleteEquipo(id).subscribe(() => this.getEquipos());
     

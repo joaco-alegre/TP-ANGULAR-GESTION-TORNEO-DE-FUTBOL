@@ -1,1 +1,15 @@
-<p>torneo-details works!</p>
+<h2>Detalles del torneo</h2>
+
+@if(torneo){
+    <div>
+        <p><b>Torneo: </b> {{ torneo.nombre }}</p>
+        <p><b>fecha de Inicio:</b> {{ torneo.fechaInicio }}</p>
+        <p><b>fecha de Finalizacion:</b> {{ torneo.fechaFin }}</p>
+        <p><b>fecha de Finalizacion:</b> {{ torneo.fechaFin }}</p>
+        <p><b>{{ torneo.fechaFin}}</b></p>
+    </div>
+
+<button [routerLink]="['es/torneos', torneo.id]">Volver</button>
+
+
+}

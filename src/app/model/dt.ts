@@ -1,4 +1,4 @@
-export default interface dt{
+export default interface DT{
     id?: string;
   nombre: string;
   equipo: string;
