@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import Equipo from '../../../model/equipo';
+import DT from '../../../model/dt';
+import { DtService } from '../../../service/dt-service/dt-service';
 
 @Component({
   selector: 'app-dt-details',
@@ -8,21 +11,21 @@ import { RouterModule } from '@angular/router';
   templateUrl: './dt-details.html',
   styleUrl: './dt-details.css'
 })
-export class DtDetails implements  OnInit{
+export class DtDetails implements OnInit{
 
-    equipo?: Equipo;
+    dt?: DT;
 
   constructor(
-    private equipoService: EquipoService,
+    private dtService: DtService,
     private route: ActivatedRoute
   ) {}
 
   
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
-    this.equipoService.getEquipoById(id).subscribe(data => this.equipo = data);
+    this.dtService.geDtById(id).subscribe(data => this.dt = data);
   }
 
 }
 
-}
+

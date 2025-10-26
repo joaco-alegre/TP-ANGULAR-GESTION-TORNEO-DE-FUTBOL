@@ -20,7 +20,7 @@ export class EquipoList implements OnInit{
 
   torneo?: Torneo;
   equipo?: Equipo;
-  directorT:? DT;
+  directorT?: DT;
 
   todosEquipos: Equipo[] = [];
   filtrarEquipos: Equipo[] = [];

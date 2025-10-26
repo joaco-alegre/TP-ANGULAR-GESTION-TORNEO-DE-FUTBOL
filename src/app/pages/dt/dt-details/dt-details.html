@@ -1,12 +1,11 @@
-<h2>{{Direc?.nombre}}</h2>
+<h2>{{dt?.nombre}}</h2>
 
-<h3>Detalles del Jugador</h3>
-@if(jugador){
+<h3>Detalles del Director Tecnico</h3>
+@if(dt){
     <div>
     <img src="" alt="">
-    <p><b>Nombre:</b> {{ jugador.nombre }}</p>
-    <p><b>Edad:</b> {{ jugador.edad }}</p>
-    <p><b>Nombre:</b> {{ jugador.fechaNacimiento}}</p>
-    <p><b>Numero de Camiseta:</b> {{ jugador.numeroCamiseta}}</p>
+    <p><b>Nombre:</b> {{ dt.nombre }}</p>
+    <p><b>Equipo:</b> {{dt.equipo }}</p>
+    <p><b>Estilo de juego:</b> {{ dt.estiloJuego}}</p>
   </div>
 }
