@@ -1,5 +1,5 @@
 export default interface Equipo{
-    id?: string;
+    id?: number;
   nombre: string;
   nombreTorneo: string;
   idTorneo: string;
