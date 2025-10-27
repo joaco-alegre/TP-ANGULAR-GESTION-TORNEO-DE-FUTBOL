@@ -1,4 +1,4 @@
-/*
+
 nav{
   font-size: 18px;
 }
@@ -135,61 +135,79 @@ border-radius: 8px;
 .navbar-scrolled:hover {
   background-color: #00334e;
 }
-*/ 
+
+/*
+
+.navbar {
+  background-color: var(--color-fondo-oscuro);
+}
 
 
-/* --- 0. ESPACIADOR --- */
-/* (Evita que el contenido de la página "salte" 
-   cuando el header se vuelve 'position: fixed') */
 :host {
   display: block;
-  height: 120px; /* <-- Debe ser igual a la altura GRANDE del .navbar */
+  background-color: var(--color-fondo-claro);
+  color: var(--color-texto-secundario);
+  padding: 40px 20px;
+}
+
+h2 {
+   color: var(--color-texto-secundario);
+   border-bottom-color: var(--color-acento-naranja);
+}
+
+
+*/
+
+
+
+
+
+
+/*
+
+:host {
+  display: block;
+  height: 120px; 
   width: 100%;
 }
 
-/* --- 1. ESTADO INICIAL (GRANDE, OPACO) --- */
-.navbar {
-  display: flex;         /* ¡Activa Flexbox! */
-  align-items: center;   /* Centra todo verticalmente */
-  width: 100%;
-  padding: 0 20px;       /* Espacio en los bordes */
-  font-family: Arial, sans-serif;
-  z-index: 1000;         /* Se asegura que esté por encima de todo */
 
-  /* Estilos "Grande" */
+.navbar {
+  display: flex;         
+  align-items: center;   
+  width: 100%;
+  padding: 0 20px;       
+  font-family: Arial, sans-serif;
+  z-index: 1000;       
+
+
   height: 120px;
-  background-color: #00334e; /* Azul opaco */
+  background-color: #00334e; 
   
-  /* Transiciones suaves */
+
   transition: height 0.3s ease, background-color 0.3s ease;
 }
 
-/* --- 2. ELEMENTOS DEL NAVBAR --- */
 
-/* Logo */
 .navbar-logo img {
-  height: 200px; /* Logo GRANDE */
+  height: 200px; 
   width: auto;
   display: block;
-  transition: height 0.3s ease; /* Transición suave para el logo */
+  transition: height 0.3s ease; 
 }
 
-/* Links */
 .navbar-links {
   display: flex;
   list-style: none;
   padding: 0;
 
-  /* 👇 Esta es tu "posición" en el medio */
-  /* Ajusta este valor (25%, 30%, etc.) 
-     para mover el bloque de links más a la izquierda o derecha */
   margin-left: 25%;
 }
 
 .navbar-links a {
   display: inline-block;
   padding: 8px 15px;
-  margin: 0 5px; /* Espacio entre cada link */
+  margin: 0 5px; 
   text-decoration: none;
   color: white;
   font-weight: bold;
@@ -197,80 +215,71 @@ border-radius: 8px;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-/* Idioma */
+
 .navbar-lang {
   display: flex;
   font-weight: bold;
   color: white;
-  
-  /* 👇 Espacio entre "Contactos" y "ES|EN" */
+
   margin-left: 30px; 
 }
 
-/* Botón de Menú */
+
 .navbar-menu-btn {
-  /* 👇 ¡¡LA MAGIA ESTÁ AQUÍ!! 👇 */
-  /* 'auto' toma todo el espacio sobrante entre 
-     el Idioma y el botón, empujándolo al borde derecho. */
   margin-left: auto;
 
-  /* Estilos para que se vea bien el ícono */
+
   background: none;
   border: none;
   color: white;
   cursor: pointer;
   padding: 8px;
-  border-radius: 50%; /* Lo hacemos circular */
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-/* --- 3. HOVERS --- */
+
 .navbar-links a:hover,
 .navbar-menu-btn:hover {
   background-color: rgba(255, 255, 255, 0.1);
   transform: scale(1.1); 
 }
 
-/* --- 4. ESTADO SCROLLED (CHICO, TRANSPARENTE) --- */
+
 .navbar-scrolled {
   position: fixed;
   top: 0;
   left: 0;
   
-  height: 60px; /* <-- Altura CHICA */
-  background-color: rgba(0, 51, 78, 0.85); /* <-- Transparente */
+  height: 60px; 
+  background-color: rgba(0, 51, 78, 0.85); 
   
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Achicamos el logo cuando está en scroll */
+
 .navbar-scrolled .navbar-logo img {
-  height: 100px; /* <-- Logo CHICO */
+  height: 100px; 
 }
 
-/* Vuelve opaco al pasar el mouse (solo en modo scroll) */
 .navbar-scrolled:hover {
   background-color: #00334e;
 }
 
 
-/* --- 5. DISEÑO RESPONSIVE (MÓVIL) --- */
-/* (Este código se aplicará solo si la pantalla 
-   mide 992px de ancho o menos) */
 
 @media (max-width: 992px) {
 
-  /* 1. Ocultamos los links y el idioma en móvil */
+
   .navbar-links,
   .navbar-lang {
     display: none;
   }
   
-  /* 2. (Opcional) Achicamos un poco el logo en móvil
-     para que no ocupe tanto espacio */
+
   .navbar-logo img {
     height: 150px; 
   }
@@ -278,4 +287,6 @@ border-radius: 8px;
   .navbar-scrolled .navbar-logo img {
     height: 80px;
   }
-}
+
+  
+}*/

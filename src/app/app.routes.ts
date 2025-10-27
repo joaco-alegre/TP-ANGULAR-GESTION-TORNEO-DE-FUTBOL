@@ -7,10 +7,18 @@ import { TorneoList } from './pages/torneo/torneo-list/torneo-list';
 import { TorneoDetails } from './pages/torneo/torneo-details/torneo-details';
 
 export const routes: Routes = [
-    {path: 'es', component: Home},
-    {path: 'en', component: Home},
-    {path: 'es/torneos', component: TorneoList},
-    {path: 'es/torneos/:id', component: EquipoList},
+    {path: 'es', 
+    component: Home,
+    title: 'Inicio - Goal Manager'},
+    {path: 'en', 
+    component: Home,
+     title: 'Home - Goal Manager'},
+    {path: 'es/torneos', 
+    component: TorneoList,
+    title: 'Torneos - Goal Manager'},
+    {path: 'es/torneos/:id',
+    component: EquipoList,
+    title: 'Equipos - Goal Manager'},
     {path: 'es/torneo/details/:id', component: TorneoDetails},
     {path: 'equipos/:id', component: EquipoDetails},
     {path: 'equipo/formulario', component: EquipoForm},

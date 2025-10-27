@@ -7,6 +7,7 @@ import Torneo from '../../../model/torneo';
 import dt from '../../../model/dt';
 import DT from '../../../model/dt';
 import Fixture from '../../../model/fixture';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-list',
@@ -27,17 +28,31 @@ export class EquipoList implements OnInit{
 
 
   constructor(private equipoService: EquipoService,
-              private route: ActivatedRoute
+              private route: ActivatedRoute,
+              private tituloService: Title
   ) {}
 
-  ngOnInit(): void {
-    console.log('ID del torneo recibido:', this.id); 
+ngOnInit(): void {
+    console.log('ID del torneo recibido:', this.id);
 
     this.equipoService.getEquipos().subscribe(data => {
       
       console.log('Datos recibidos del servicio:', data); 
       this.todosEquipos = data;
-      this.filtrarEquiposPorTorneo();
+      
+      this.filtrarEquiposPorTorneo(); 
+
+      if (this.filtrarEquipos.length > 0) {
+
+        const nombreTorneo = this.filtrarEquipos[0].nombreTorneo;
+        this.tituloService.setTitle(`Equipos de ${nombreTorneo}`);
+
+      } else {
+
+        this.tituloService.setTitle('Torneo no encontrado');
+
+      }
+
     });
   }
 

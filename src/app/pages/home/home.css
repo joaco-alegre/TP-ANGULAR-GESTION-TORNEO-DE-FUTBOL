@@ -54,3 +54,117 @@
   transform: scale(1.11);
 }
 
+
+/* Carrusel de torneos */ 
+
+h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333; /* O el color de tu tema */
+}
+
+/* 1. El contenedor "ventana" */
+.logo-scroller {
+  max-width: 90%; /* Ajusta el ancho que ocupará en tu página */
+  margin: 0 auto;
+  overflow: hidden; /* <-- ¡CLAVE! Oculta lo que se desborda */
+  
+  /* Esto crea el efecto "fade" en los bordes */
+  -webkit-mask-image: linear-gradient(
+    90deg, 
+    transparent, 
+    #fff 20%, 
+    #fff 80%, 
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg, 
+    transparent, 
+    #fff 20%, 
+    #fff 80%, 
+    transparent
+  );
+}
+
+/* 2. El contenedor que se mueve */
+.logo-scroller-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content; /* Hace que sea tan ancho como su contenido */
+
+  /* 👇 ¡LA ANIMACIÓN! */
+  /* 'scroll' es el nombre, '40s' la duración, 
+     'linear' la velocidad, 'infinite' el bucle */
+  animation: scroll 35s linear infinite;
+}
+
+/* 3. Las listas (ul) y los logos (li) */
+.logo-scroller-inner ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.logo-scroller-inner li {
+  padding: 0 30px; /* Espacio entre logos */
+}
+
+.logo-scroller-inner img {
+  height: 140px; /* Altura fija para todos los logos */
+  width: auto;
+  opacity: 0.8; /* Un tono grisáceo sutil */
+  transition: opacity 0.3s ease;
+}
+
+.logo-scroller-inner img:hover {
+  opacity: 1; /* Color completo al pasar el mouse */
+}
+
+/* 4. (Opcional) Pausar la animación al pasar el mouse */
+.logo-scroller:hover .logo-scroller-inner {
+  animation-play-state: paused;
+}
+
+/* 5. La definición de la animación (keyframes) */
+@keyframes scroll {
+  /* Mueve el contenedor desde la posición 0 */
+  from {
+    transform: translateX(0);
+  }
+  /* Hasta que se mueva el 100% de su propio ancho */
+  /* (Al duplicar la lista, esto crea el bucle perfecto) */
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+/* La linea que se ve debajo de los torneos*/
+
+
+.seccion-oscura {
+  /* El color de fondo oscuro de tu imagen */
+  background-color: #21293c; 
+  padding: 60px 0; /* Un poco de espacio para el contenido */
+  
+  /* --- ¡AQUÍ ESTÁ LA MAGIA! --- */
+  /* Define un polígono de 4 puntos: */
+  /* 1. (0 0)    -> Esquina superior izquierda */
+  /* 2. (100% 0)  -> Esquina superior derecha */
+  /* 3. (100% 90%) -> Esquina inferior derecha (90% desde arriba) */
+  /* 4. (0 100%)  -> Esquina inferior izquierda (100% desde arriba) */
+  clip-path: polygon(0 100%, 0 0, 100% 100%, 0 100%);
+
+  /* (Necesitás ajustar el último valor (ej. 90%) 
+     para controlar qué tan inclinada es la línea) */
+}
+
+.seccion-clara {
+  /* El color de fondo claro */
+  background-color: #f4f4f4;
+  padding: 50px 0;
+}

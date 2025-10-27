@@ -1,6 +1,21 @@
+:root {
+  --color-fondo-oscuro: #0d0d0d;
+  --color-fondo-claro: #f4f4f4;
+  --color-texto-principal: #ffffff; 
+  --color-texto-secundario: #333333; /
+}
+
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-secundario);
 }
+
+html{
+  scroll-behavior: smooth;
+}
+
+

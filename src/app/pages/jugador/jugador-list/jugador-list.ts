@@ -5,6 +5,7 @@ import { RouterLink } from "@angular/router";
 import Equipo from '../../../model/equipo';
 import DT from '../../../model/dt';
 import Fixture from '../../../model/fixture';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-jugador-list',
@@ -27,18 +28,34 @@ export class JugadorList implements OnInit{
   filtrarFixture: Fixture[] = [];
   fixtures: Fixture[] = [];
 
-  constructor(private jugadorService: JugadorService) {}
+  constructor(private jugadorService: JugadorService,
+              private tituloService: Title
+  ) {}
 
-  ngOnInit(): void {
-    console.log('ID del equipo recibido:', this.id); 
+ngOnInit(): void {
+    console.log('ID del equipo recibido:', this.id);
 
     this.jugadorService.getJugadores().subscribe(data => {
       
       console.log('Datos recibidos del servicio:', data); 
       this.todosLosJugadores = data;
-      this.filtrarJugadoresPorEquipo();
+      
+      this.filtrarJugadoresPorEquipo(); 
+
+      if (this.filtrarJugadores.length > 0) {
+
+        const nombreTorneo = this.filtrarJugadores[0].nombre;
+        this.tituloService.setTitle(`Jugadores de ${nombreTorneo}`);
+
+      } else {
+
+        this.tituloService.setTitle('Equipo no encontrado');
+
+      }
+
     });
   }
+  
 
   filtrarJugadoresPorEquipo(): void {
     if (this.id) {
