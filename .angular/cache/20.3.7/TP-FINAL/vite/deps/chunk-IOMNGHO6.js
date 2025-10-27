@@ -3541,7 +3541,7 @@ var Version = class {
     this.patch = parts.slice(2).join(".");
   }
 };
-var VERSION = new Version("20.3.6");
+var VERSION = new Version("20.3.7");
 var ERROR_DETAILS_PAGE_BASE_URL = (() => {
   const versionSubDomain = VERSION.major !== "0" ? `v${VERSION.major}.` : "";
   return `https://${versionSubDomain}angular.dev/errors`;
@@ -15226,7 +15226,7 @@ var ComponentFactory2 = class extends ComponentFactory$1 {
   }
 };
 function createRootTView(rootSelectorOrNode, componentDef, componentBindings, directives) {
-  const tAttributes = rootSelectorOrNode ? ["ng-version", "20.3.6"] : (
+  const tAttributes = rootSelectorOrNode ? ["ng-version", "20.3.7"] : (
     // Extract attributes and classes from the first selector only to match VE behavior.
     extractAttrsAndClassesFromSelector(componentDef.selectors[0])
   );
@@ -19234,7 +19234,7 @@ function scheduleDelayedTrigger(scheduleFn) {
   const cleanupFn = scheduleFn(() => triggerDeferBlock(0, lView, tNode), injector);
   storeTriggerCleanupFn(0, lDetails, cleanupFn);
 }
-function scheduleDelayedPrefetching(scheduleFn, trigger) {
+function scheduleDelayedPrefetching(scheduleFn) {
   if (false)
     return;
   const lView = getLView();
@@ -20348,6 +20348,7 @@ function ɵɵanimateLeave(value) {
     return ɵɵanimateLeave;
   }
   const tNode = getCurrentTNode();
+  cancelLeavingNodes(tNode, lView);
   addAnimationToLView(getLViewLeaveAnimations(lView), tNode, () => runLeaveAnimations(lView, tNode, value));
   initializeAnimationQueueScheduler(lView[INJECTOR]);
   return ɵɵanimateLeave;
@@ -20415,6 +20416,7 @@ function ɵɵanimateLeaveListener(value) {
   ngDevMode && assertAnimationTypes(value, "animate.leave");
   const lView = getLView();
   const tNode = getCurrentTNode();
+  cancelLeavingNodes(tNode, lView);
   allLeavingAnimations.add(lView);
   addAnimationToLView(getLViewLeaveAnimations(lView), tNode, () => runLeaveAnimationFunction(lView, tNode, value));
   initializeAnimationQueueScheduler(lView[INJECTOR]);
@@ -30854,7 +30856,7 @@ export {
 @angular/core/fesm2022/resource.mjs:
 @angular/core/fesm2022/primitives/event-dispatch.mjs:
   (**
-   * @license Angular v20.3.6
+   * @license Angular v20.3.7
    * (c) 2010-2025 Google LLC. https://angular.dev/
    * License: MIT
    *)
@@ -30862,7 +30864,7 @@ export {
 @angular/core/fesm2022/debug_node.mjs:
 @angular/core/fesm2022/core.mjs:
   (**
-   * @license Angular v20.3.6
+   * @license Angular v20.3.7
    * (c) 2010-2025 Google LLC. https://angular.dev/
    * License: MIT
    *)
@@ -30883,4 +30885,4 @@ export {
    * found in the LICENSE file at https://angular.dev/license
    *)
 */
-//# sourceMappingURL=chunk-DQIUKFFJ.js.map
+//# sourceMappingURL=chunk-IOMNGHO6.js.map

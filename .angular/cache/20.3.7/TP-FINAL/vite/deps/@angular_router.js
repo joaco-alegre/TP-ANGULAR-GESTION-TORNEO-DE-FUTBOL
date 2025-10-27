@@ -1,7 +1,7 @@
 import {
   Title
-} from "./chunk-YCJW7L24.js";
-import "./chunk-2LGJ44LQ.js";
+} from "./chunk-H4UUKF4G.js";
+import "./chunk-DPGHB2PD.js";
 import {
   HashLocationStrategy,
   LOCATION_INITIALIZED,
@@ -9,8 +9,8 @@ import {
   LocationStrategy,
   PathLocationStrategy,
   ViewportScroller
-} from "./chunk-7AFFYASK.js";
-import "./chunk-ZMLREZMJ.js";
+} from "./chunk-WEKWBOLC.js";
+import "./chunk-EITAFI4I.js";
 import {
   APP_BOOTSTRAP_LISTENER,
   ApplicationRef,
@@ -66,6 +66,7 @@ import {
   filter,
   finalize,
   first,
+  formatRuntimeError,
   from,
   inject,
   input,
@@ -116,7 +117,7 @@ import {
   ɵɵloadQuery,
   ɵɵqueryRefresh,
   ɵɵsanitizeUrlOrResourceUrl
-} from "./chunk-DQIUKFFJ.js";
+} from "./chunk-IOMNGHO6.js";
 import {
   __async,
   __spreadProps,
@@ -623,7 +624,7 @@ var UrlParser = class {
         outletName = PRIMARY_OUTLET;
       }
       const children = this.parseChildren();
-      segments[outletName] = Object.keys(children).length === 1 ? children[PRIMARY_OUTLET] : new UrlSegmentGroup([], children);
+      segments[outletName] = Object.keys(children).length === 1 && children[PRIMARY_OUTLET] ? children[PRIMARY_OUTLET] : new UrlSegmentGroup([], children);
       this.consumeOptional("//");
     }
     return segments;
@@ -4737,7 +4738,9 @@ var Router = class _Router {
   parseUrl(url) {
     try {
       return this.urlSerializer.parse(url);
-    } catch {
+    } catch (e) {
+      this.console.warn(formatRuntimeError(4018, ngDevMode && `Error parsing URL ${url}. Falling back to '/' instead. 
+` + e));
       return this.urlSerializer.parse("/");
     }
   }
@@ -6037,7 +6040,7 @@ function mapToCanDeactivate(providers) {
 function mapToResolve(provider) {
   return (...params) => inject(provider).resolve(...params);
 }
-var VERSION = new Version("20.3.6");
+var VERSION = new Version("20.3.7");
 export {
   ActivatedRoute,
   ActivatedRouteSnapshot,
@@ -6124,7 +6127,7 @@ export {
 @angular/router/fesm2022/router_module.mjs:
 @angular/router/fesm2022/router.mjs:
   (**
-   * @license Angular v20.3.6
+   * @license Angular v20.3.7
    * (c) 2010-2025 Google LLC. https://angular.dev/
    * License: MIT
    *)
