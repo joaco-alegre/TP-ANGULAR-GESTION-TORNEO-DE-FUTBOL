@@ -1,4 +1,5 @@
-.home-container {
+
+/*.home-container {
   background-image: url('/assets/img/mario-klassen-70YxSTWa2Zw-unsplash.jpg'); 
   background-size: cover; 
   background-position: center center; 
@@ -12,8 +13,6 @@
   color: white; 
   padding: 20px;
   box-sizing: border-box;
-  /*filter: blur(1px);
-  transform: scale(1.02); */
 }
 
 
@@ -54,23 +53,17 @@
   transform: scale(1.11);
 }
 
-
-/* Carrusel de torneos */ 
-
 h2 {
   font-size: 2.5em;
   text-align: center;
   margin-bottom: 30px;
-  color: #333; /* O el color de tu tema */
+  color: #333; 
 }
 
-/* 1. El contenedor "ventana" */
 .logo-scroller {
-  max-width: 90%; /* Ajusta el ancho que ocupará en tu página */
+  max-width: 90%; 
   margin: 0 auto;
-  overflow: hidden; /* <-- ¡CLAVE! Oculta lo que se desborda */
-  
-  /* Esto crea el efecto "fade" en los bordes */
+  overflow: hidden; 
   -webkit-mask-image: linear-gradient(
     90deg, 
     transparent, 
@@ -87,19 +80,14 @@ h2 {
   );
 }
 
-/* 2. El contenedor que se mueve */
 .logo-scroller-inner {
   display: flex;
   flex-wrap: nowrap;
-  width: max-content; /* Hace que sea tan ancho como su contenido */
+  width: max-content; 
 
-  /* 👇 ¡LA ANIMACIÓN! */
-  /* 'scroll' es el nombre, '40s' la duración, 
-     'linear' la velocidad, 'infinite' el bucle */
   animation: scroll 35s linear infinite;
 }
 
-/* 3. Las listas (ul) y los logos (li) */
 .logo-scroller-inner ul {
   display: flex;
   list-style: none;
@@ -108,63 +96,225 @@ h2 {
 }
 
 .logo-scroller-inner li {
-  padding: 0 30px; /* Espacio entre logos */
+  padding: 0 30px; 
 }
 
 .logo-scroller-inner img {
-  height: 140px; /* Altura fija para todos los logos */
+  height: 140px;
   width: auto;
-  opacity: 0.8; /* Un tono grisáceo sutil */
+  opacity: 0.8; 
   transition: opacity 0.3s ease;
 }
 
 .logo-scroller-inner img:hover {
-  opacity: 1; /* Color completo al pasar el mouse */
+  opacity: 1; 
 }
 
-/* 4. (Opcional) Pausar la animación al pasar el mouse */
 .logo-scroller:hover .logo-scroller-inner {
   animation-play-state: paused;
 }
 
-/* 5. La definición de la animación (keyframes) */
 @keyframes scroll {
-  /* Mueve el contenedor desde la posición 0 */
   from {
     transform: translateX(0);
   }
-  /* Hasta que se mueva el 100% de su propio ancho */
-  /* (Al duplicar la lista, esto crea el bucle perfecto) */
   to {
     transform: translateX(-50%);
   }
 }
 
-
-
-
-/* La linea que se ve debajo de los torneos*/
-
-
 .seccion-oscura {
-  /* El color de fondo oscuro de tu imagen */
   background-color: #21293c; 
-  padding: 60px 0; /* Un poco de espacio para el contenido */
-  
-  /* --- ¡AQUÍ ESTÁ LA MAGIA! --- */
-  /* Define un polígono de 4 puntos: */
-  /* 1. (0 0)    -> Esquina superior izquierda */
-  /* 2. (100% 0)  -> Esquina superior derecha */
-  /* 3. (100% 90%) -> Esquina inferior derecha (90% desde arriba) */
-  /* 4. (0 100%)  -> Esquina inferior izquierda (100% desde arriba) */
+  padding: 60px 0; 
   clip-path: polygon(0 100%, 0 0, 100% 100%, 0 100%);
-
-  /* (Necesitás ajustar el último valor (ej. 90%) 
-     para controlar qué tan inclinada es la línea) */
 }
 
 .seccion-clara {
-  /* El color de fondo claro */
+  background-color: #f4f4f4;
+  padding: 50px 0;
+}
+
+*/
+
+
+
+
+/* --- 1. SECCIÓN HOME (CON BLUR Y FUENTES NUEVAS) --- */
+
+.home-container {
+  background-image: url('/assets/img/mario-klassen-70YxSTWa2Zw-unsplash.jpg'); 
+  background-size: cover; 
+  background-position: center center; 
+  background-repeat: no-repeat; 
+  min-height: 105vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  color: white; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+
+
+
+/*
+.home-container {
+  min-height: 105vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  color: white; 
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden; 
+}
+
+
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  background-image: url('/assets/img/mario-klassen-70YxSTWa2Zw-unsplash.jpg'); 
+  background-size: cover; 
+  background-position: center center; 
+  background-repeat: no-repeat; 
+  filter: blur(20px);
+  transform: scale(1.02); 
+}*/
+
+/* Texto mejorado */
+.home-container h1 {
+  font-family: 'Montserrat', sans-serif; /* Fuente nueva */
+  font-size: 4.5rem; /* Más grande */
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
+}
+
+/* Párrafo mejorado */
+.home-container p {
+  font-family: 'Montserrat', sans-serif; /* Fuente nueva */
+  font-size: 1.5rem; /* Más grande */
+  max-width: 700px;
+  line-height: 1.5;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* --- 2. BOTÓN "VER TORNEOS" (SIN CAMBIOS) --- */
+/* (Tu CSS, está perfecto) */
+.btn-primary {
+  display: inline-block; 
+  padding: 20px 36px; 
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white; 
+  background-color: #034c69;  
+  border: none;
+  border-radius: 5px; 
+  text-decoration: none; 
+  text-align: center;
+  cursor: pointer;
+  margin-top: 20px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover {
+  background-color: #00263a; 
+  color: white;
+  transform: scale(1.11);
+}
+
+/* --- 3. SECCIÓN CARRUSEL DE LOGOS (SIN CAMBIOS) --- */
+/* (Tu CSS, está perfecto) */
+
+h2 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333; 
+}
+
+.logo-scroller {
+  max-width: 90%; 
+  margin: 0 auto;
+  overflow: hidden; 
+  -webkit-mask-image: linear-gradient(
+    90deg, 
+    transparent, 
+    #fff 20%, 
+    #fff 80%, 
+    transparent
+  );
+  mask-image: linear-gradient(
+    90deg, 
+    transparent, 
+    #fff 20%, 
+    #fff 80%, 
+    transparent
+  );
+}
+
+.logo-scroller-inner {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content; 
+  animation: scroll 35s linear infinite;
+}
+
+.logo-scroller-inner ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.logo-scroller-inner li {
+  padding: 0 30px; 
+}
+
+.logo-scroller-inner img {
+  height: 140px;
+  width: auto;
+  opacity: 0.8; 
+  transition: opacity 0.3s ease;
+}
+
+.logo-scroller-inner img:hover {
+  opacity: 1; 
+}
+
+.logo-scroller:hover .logo-scroller-inner {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- 4. SECCIONES DIAGONALES --- */
+/* (Tu CSS, corregí el clip-path que estaba mal) */
+
+.seccion-oscura {
+  background-color: #21293c; 
+  padding: 60px 0; 
+  /* 👇 Corregí tu clip-path, el que tenías estaba roto */
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.seccion-clara {
   background-color: #f4f4f4;
   padding: 50px 0;
 }

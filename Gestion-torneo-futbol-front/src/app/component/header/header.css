@@ -1,4 +1,4 @@
-
+/* 
 nav{
   font-size: 18px;
 }
@@ -134,7 +134,7 @@ border-radius: 8px;
 
 .navbar-scrolled:hover {
   background-color: #00334e;
-}
+} */
 
 /*
 
@@ -290,3 +290,102 @@ h2 {
 
   
 }*/
+
+
+/* --- 1. ESPACIADOR --- */
+/* (Tuyo, está perfecto) Define la altura del header grande */
+:host {
+  display: block; 
+  width: 100%;
+  height: 120px;
+  background-color: #00334e;
+}
+
+/* --- 2. ESTADO INICIAL (GRANDE, OPACO) --- */
+/* Aplicamos tus estilos al .navbar de Bootstrap */
+.navbar {
+  height: 120px; 
+  background-color: #00334e; 
+  transition: height 0.3s ease, background-color 0.3s ease;
+  /* El z-index, width, etc. ya los maneja Bootstrap */
+}
+
+/* Estilo para tu logo GRANDE */
+.navbar-logo img {
+  height: 200px; /* Tu logo grande que desborda */
+  width: auto;
+  display: block;
+  transition: height 0.3s ease; 
+}
+
+/* Limpiamos el padding del link del logo */
+.navbar-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+/* --- 3. ESTADO SCROLLED (CHICO, TRANSPARENTE) --- */
+/* (Tuyo, está perfecto) */
+
+.navbar-scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; 
+  background-color: rgba(0, 51, 78, 0.60);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-scrolled .navbar-logo img {
+  height: 100px; /* Tu logo chico que desborda */
+}
+
+.navbar-scrolled:hover {
+  background-color: #00334e;
+}
+
+
+/* --- 4. EFECTOS HOVER PERSONALIZADOS --- */
+/* (Tuyo, los mantenemos) */
+
+/* Damos un estilo custom a los links de Bootstrap */
+.navbar .nav-link {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 6px 4px; /* Tu padding custom */
+  margin: 0 5px; /* Espacio entre links */
+}
+
+.navbar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1); 
+}
+
+/* (Opcional) Estilo hover para el botón de menú custom */
+.navbar .btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.navbar-dark .navbar-text {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.navbar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1); 
+  color: #ffffff; /* Aseguramos que siga blanco en hover */
+}
+
+.navbar .btn {
+  font-size: 1.1rem;
+}

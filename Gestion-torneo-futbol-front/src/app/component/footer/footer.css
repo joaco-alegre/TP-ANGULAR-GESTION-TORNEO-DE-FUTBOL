@@ -1,67 +1,167 @@
+/*
+
 :host {
   display: block;
   width: 100%;
 }
 
 .main-footer {
-  /* 1. Paleta de colores del Header */
-  background-color: #00334e; /* Mismo azul oscuro */
+
+  background-color: #00334e; 
   color: #ffffff;
   font-family: Arial, sans-serif;
   
-  /* 2. Espaciado */
-  padding: 40px 20px; /* Más padding que el header */
-  margin-top: auto; /* ¡Esta es la magia! (ver Paso 2) */
+
+  padding: 40px 20px; 
+  margin-top: auto; 
 }
 
 .footer-container {
-  max-width: 1200px; /* Limita el ancho en pantallas grandes */
-  margin: 0 auto; /* Centra el contenido */
-  
-  /* 3. Layout de 3 columnas */
+  max-width: 1200px; 
+  margin: 0 auto; 
   display: flex;
-  justify-content: space-between; /* Espacia las columnas */
-  align-items: flex-start; /* Alinea arriba */
-  flex-wrap: wrap; /* Permite que se apilen en pantallas chicas */
-  gap: 20px; /* Espacio entre secciones si se envuelven */
+  justify-content: space-between; 
+  align-items: flex-start; 
+  flex-wrap: wrap; 
+  gap: 20px; 
 }
 
 .footer-section {
-  flex: 1; /* Cada sección trata de ocupar el mismo espacio */
-  min-width: 250px; /* Ancho mínimo antes de apilarse */
+  flex: 1; 
+  min-width: 250px; 
 }
 
-/* 4. Estilos de texto */
 .footer-section h4 {
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 15px;
-  /* Usamos el color de acento para los títulos */
   color: #ffffff; 
 }
 
 .footer-section p {
   font-size: 0.9rem;
-  color: #ccc; /* Un gris claro para texto secundario */
+  color: #ccc; 
   line-height: 1.5;
   margin: 5px 0;
 }
 
-/* 5. Estilos de íconos sociales */
 .social-icons {
   display: flex;
-  gap: 15px; /* Espacio entre íconos */
+  gap: 15px; 
 }
 
 .social-icon {
-  color: white; /* Color base del ícono */
-  font-size: 1.5rem; /* Tamaño del ícono */
+  color: white; 
+  font-size: 1.5rem;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* 6. Efecto Hover (usando el color de acento) */
 .social-icon:hover {
-  color: #ffffff; /* Naranja al pasar el mouse */
-  transform: scale(1.1); /* Efecto sutil */
+  color: #ffffff; 
+  transform: scale(1.1); 
+}*/
+
+
+/* --- Estilos del Footer (Sin Bootstrap) --- */
+
+:host {
+  width: 100%;
+}
+
+.footer-dark {
+  /* Color de fondo oscuro (similar al de Riccio) */
+  background-color: #1c1c24; 
+  color: #f4f4f4; /* Texto principal claro */
+  margin-top: auto; /* Mantiene el footer abajo */
+  padding: 50px 0; /* Espaciado vertical */
+}
+
+/* 1. Contenedor principal (centra el contenido) */
+.footer-container {
+  max-width: 1200px;
+  width: 90%; /* Asegura que haya márgenes en pantallas chicas */
+  margin: 0 auto;
+}
+
+/* 2. Fila de 3 columnas (¡La magia de Flexbox!) */
+.footer-row {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las columnas se apilen en móvil */
+  justify-content: space-between; /* Espacia las columnas */
+  margin-bottom: 30px; /* Espacio antes de la línea */
+}
+
+/* 3. Columnas */
+.footer-col {
+  flex: 1; /* Cada columna trata de tomar el mismo espacio */
+  min-width: 250px; /* Ancho mínimo antes de apilarse */
+  margin-bottom: 20px; /* Espacio si se apilan en móvil */
+}
+
+/* Estilo del logo */
+.footer-logo {
+  height: 190px; /* Ajustá la altura de tu logo */
+  width: auto;
+  opacity: 0.9;
+}
+
+/* Títulos de las columnas */
+.footer-col h5 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #ffffff; /* Color de acento naranja */
+}
+
+/* Lista de links de navegación */
+.footer-nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-nav-links li {
+  margin-bottom: 8px;
+}
+
+.footer-nav-links a {
+  text-decoration: none;
+  color: #ccc;
+  transition: all 0.2s ease;
+}
+
+.footer-nav-links a:hover {
+  color: #ccc;
+  padding-left: 5px;
+}
+
+/* Íconos de redes sociales */
+.social-icons a {
+  font-size: 1.5rem;
+  color: #ccc;
+  margin-right: 20px;
+  transition: all 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Línea divisoria */
+.footer-line {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 0;
+}
+
+/* Texto de Copyright */
+.footer-copyright {
+  text-align: center;
+}
+
+.footer-copyright p {
+  margin-top: 20px;
+  color: #aaa;
+  font-size: 0.9rem;
 }
