@@ -22,7 +22,7 @@
 
 <ul>
   @for (jugador of filtrarJugadores; track jugador.id) {
-    <li [routerLink]="['/es/torneos/equipo/jugador/', jugador.id]">
+    <li [routerLink]="['/es/jugadores/', jugador.id]">
       <!-- <img 
         [src]="equipo.escudo" 
         [alt]="'Escudo de ' + equipo.nombre" 

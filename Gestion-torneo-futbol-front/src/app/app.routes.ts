@@ -5,6 +5,8 @@ import { EquipoForm } from './pages/equipo/equipo-form/equipo-form';
 import { Home } from './pages/home/home';
 import { TorneoList } from './pages/torneo/torneo-list/torneo-list';
 import { TorneoDetails } from './pages/torneo/torneo-details/torneo-details';
+import { JugadorList } from './pages/jugador/jugador-list/jugador-list';
+import { JugadorDetails } from './pages/jugador/jugador-details/jugador-details';
 
 export const routes: Routes = [
     {path: 'es', 
@@ -20,6 +22,8 @@ export const routes: Routes = [
     component: EquipoList,
     title: 'Equipos - Goal Manager'},
     {path: 'es/torneo/details/:id', component: TorneoDetails},
+    {path: 'es/equipos/:id', component: JugadorList},
+    {path: 'es/jugadores/:id', component: JugadorDetails},
     {path: 'equipos/:id', component: EquipoDetails},
     {path: 'equipo/formulario', component: EquipoForm},
     {path: ' ', redirectTo: 'home', pathMatch: 'full'},
