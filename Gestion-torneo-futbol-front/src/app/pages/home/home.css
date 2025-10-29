@@ -192,7 +192,7 @@ h2 {
 /* Texto mejorado */
 .home-container h1 {
   font-family: 'Montserrat', sans-serif; /* Fuente nueva */
-  font-size: 4.5rem; /* Más grande */
+  font-size: 4.4rem; /* Más grande */
   font-weight: 700;
   margin-bottom: 10px;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
@@ -201,7 +201,7 @@ h2 {
 /* Párrafo mejorado */
 .home-container p {
   font-family: 'Montserrat', sans-serif; /* Fuente nueva */
-  font-size: 1.5rem; /* Más grande */
+  font-size: 1.7rem; /* Más grande */
   max-width: 700px;
   line-height: 1.5;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
@@ -215,7 +215,7 @@ h2 {
   font-size: 1.4em;
   font-weight: bold;
   color: white; 
-  background-color: #034c69;  
+  background-color: #034c69; 
   border: none;
   border-radius: 5px; 
   text-decoration: none; 
@@ -281,7 +281,8 @@ h2 {
 }
 
 .logo-scroller-inner img {
-  height: 140px;
+  margin-top: 20px;
+  height: 200px;
   width: auto;
   opacity: 0.8; 
   transition: opacity 0.3s ease;
@@ -317,4 +318,91 @@ h2 {
 .seccion-clara {
   background-color: #f4f4f4;
   padding: 50px 0;
+}
+
+
+/* --- Estilos para Títulos de Sección (h2) --- */
+/* (Pega esto en home.component.css) */
+
+/* * Esto aplica a todos los <h2> dentro del :host (tu componente)
+ * EXCEPTO el que ya tiene la clase .contact-title
+*/
+:host h2 {
+  margin-top: 4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.6rem; /* Tamaño grande */
+  font-weight: 700;  /* Bold */
+  text-align: center;
+  margin-bottom: 2rem; /* Espacio antes del contenido */
+  padding-bottom: 1rem; /* Espacio para la línea */
+  
+  /* Color de texto oscuro (para fondos claros) */
+  color: #222; 
+  
+  /* Línea decorativa inferior */
+  border-bottom: 3px solid #21293c; /* El mismo color dorado del form */
+  
+  /* Hacemos que la línea no ocupe todo el ancho */
+  width: 50%;
+  max-width: 400px;
+  
+  /* Centramos la línea (ya que el texto está centrado) */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* (Opcional) Ajuste para celulares */
+@media (max-width: 576px) {
+  :host h2:not(.contact-title) {
+    font-size: 2.2rem; /* Un poco más chico en móvil */
+    width: 80%;
+  }
+}
+
+
+
+/* --- Estilos Sección Noticias --- */
+
+/* 1. La tarjeta personalizada */
+.news-card {
+  border: none; /* Quitamos el borde feo de Bootstrap */
+  border-radius: 10px; /* Bordes más suaves */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+  overflow: hidden; /* Para que la imagen respete los bordes */
+  
+  /* 👇 ¡LA ANIMACIÓN! */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 2. El efecto hover que pediste */
+.news-card:hover {
+  /* 👇 Se agranda un 5% */
+  transform: scale(1.06);
+  
+  /* Sombra más pronunciada al hacer hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 3. Estilo de la imagen */
+.news-card .card-img-top {
+  height: 250px; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Evita que la imagen se deforme */
+}
+
+/* 4. Estilo del cuerpo y título */
+.news-card .card-body {
+  text-align: center;
+  padding: 1.5rem 1.2rem;
+}
+
+.news-card .card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #333; /* El color del título (oscuro) */
+  font-size: 1.25rem;
+}
+
+/* 5. (Opcional) Quita el subrayado del link */
+.card-link {
+  text-decoration: none;
 }

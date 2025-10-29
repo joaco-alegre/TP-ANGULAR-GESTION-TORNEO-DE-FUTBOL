@@ -312,7 +312,7 @@ h2 {
 
 /* Estilo para tu logo GRANDE */
 .navbar-logo img {
-  height: 200px; /* Tu logo grande que desborda */
+  height: 110px; /* Tu logo grande que desborda */
   width: auto;
   display: block;
   transition: height 0.3s ease; 
@@ -339,7 +339,7 @@ h2 {
 }
 
 .navbar-scrolled .navbar-logo img {
-  height: 100px; /* Tu logo chico que desborda */
+  height: 65px; /* Tu logo chico que desborda */
 }
 
 .navbar-scrolled:hover {
