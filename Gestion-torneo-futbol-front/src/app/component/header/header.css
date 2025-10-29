@@ -307,6 +307,7 @@ h2 {
   height: 120px; 
   background-color: #00334e; 
   transition: height 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
   /* El z-index, width, etc. ya los maneja Bootstrap */
 }
 

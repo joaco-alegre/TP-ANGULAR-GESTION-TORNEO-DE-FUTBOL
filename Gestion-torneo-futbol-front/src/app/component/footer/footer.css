@@ -137,15 +137,16 @@
 
 /* Íconos de redes sociales */
 .social-icons a {
+  display: inline-block;
   font-size: 1.5rem;
   color: #ccc;
   margin-right: 20px;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .social-icons a:hover {
   color: #fff;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 /* Línea divisoria */
@@ -164,4 +165,18 @@
   margin-top: 20px;
   color: #aaa;
   font-size: 0.9rem;
+}
+
+
+/* ... (tus otros estilos de .footer-dark, .footer-col, etc.) ... */
+
+/* Estilo para los nuevos links de contacto */
+.footer-contact-link {
+  text-decoration: none;
+  color: #ccc; /* El mismo gris claro de tus otros links */
+  transition: all 0.2s ease;
+}
+
+.footer-contact-link:hover {
+  color: #fff; /* Blanco al pasar el mouse */
 }
