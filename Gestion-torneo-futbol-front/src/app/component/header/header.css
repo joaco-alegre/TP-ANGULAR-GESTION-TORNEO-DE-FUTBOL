@@ -390,3 +390,73 @@ h2 {
 .navbar .btn {
   font-size: 1.1rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* 1. El contenedor: necesario para posicionar el menú */
+.contenedor-menu {
+  position: relative; /* El menú se posicionará relativo a esto */
+  display: inline-block; /* Para que no ocupe todo el ancho */
+}
+
+/* 2. El menú desplegable (OCULTO por defecto) */
+#menu-desplegable {
+  /* Posicionamiento */
+  position: absolute;
+  top: 110%; /* Un poquito debajo del botón (100% sería pegado) */
+  right: 0;  /* Alineado a la derecha del contenedor */
+  z-index: 1000; /* Por encima de todo */
+
+  /* Estilos (imitando Bootstrap) */
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.375rem; /* 6px */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+  min-width: 180px; /* Ancho mínimo */
+
+  /* --- La Magia (Oculto) --- */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px); /* Efecto de "caída" */
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out, visibility 0.2s;
+}
+
+/* 3. El estado VISIBLE (cuando TS agrega la clase) */
+#menu-desplegable.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* 4. Estilos internos del menú */
+#menu-desplegable ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0; /* Espaciado interno vertical */
+}
+
+#menu-desplegable li a {
+  display: block;
+  padding: 0.5rem 1.5rem; /* Espaciado de cada item */
+  text-decoration: none;
+  color: #212529; /* Color de texto oscuro de Bootstrap */
+  white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+}
+
+#menu-desplegable li a:hover {
+  background-color: #f8f9fa; /* Color de hover de Bootstrap */
+}
+
+/* Una línea divisoria */
+#menu-desplegable hr {
+  margin: 0.
+}

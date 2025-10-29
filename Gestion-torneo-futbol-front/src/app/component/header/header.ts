@@ -26,5 +26,12 @@ export class Header {
       this.isScrolled = false;
     }
   }
+// 1. Crea una propiedad para guardar el estado
+  menuVisible = false;
+
+  // 2. Crea una función para alternar (toggle) ese estado
+  toggleMenu() {
+    this.menuVisible = !this.menuVisible;
+  }
 
 }

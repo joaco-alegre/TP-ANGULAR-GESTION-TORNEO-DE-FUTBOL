@@ -99,11 +99,18 @@
         ES | EN
       </span>
 
-      <button class="btn btn-outline-light ms-3 d-none d-lg-block">
-        <span class="material-icons" style="vertical-align: middle;">
-          menu
-        </span>
-      </button>
+        <div class="contenedor-menu">
+
+          <button (click)="toggleMenu()">Menú</button>
+
+          <nav id="menu-desplegable" [class.visible]="menuVisible">
+            <ul>
+              <li><a href="#">Iniciar Sesion</a></li>
+              <li><a href="#">modo oscuro</a></li>
+            </ul>
+          </nav>
+
+        </div>
 
     </div>
   </div>
