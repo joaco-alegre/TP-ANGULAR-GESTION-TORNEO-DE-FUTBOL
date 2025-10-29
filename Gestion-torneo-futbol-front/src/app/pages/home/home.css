@@ -406,3 +406,43 @@ h2 {
 .card-link {
   text-decoration: none;
 }
+
+
+
+
+/* --- Estilos Sección Nosotros --- */
+
+.team-card {
+  border: none;
+  border-radius: 10px;
+  /* Usamos la misma transición que en las noticias */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  /* Usamos el mismo efecto de las noticias */
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo para la foto (avatar) */
+.team-avatar {
+  /* Hacemos la imagen redonda */
+  border-radius: 50%; 
+  
+  /* La achicamos y centramos */
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 20px auto 0 auto; /* Espacio arriba y la centra */
+  
+  /* Borde sutil */
+  border: 4px solid #f4f4f4;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.team-card .card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #333;
+}
