@@ -152,7 +152,7 @@
 /* Línea divisoria */
 .footer-line {
   border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 2px solid rgba(255, 255, 255, 0.40);
   margin-top: 0;
 }
 

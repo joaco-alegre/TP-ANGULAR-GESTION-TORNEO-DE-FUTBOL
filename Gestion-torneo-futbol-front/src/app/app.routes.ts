@@ -7,6 +7,8 @@ import { TorneoList } from './pages/torneo/torneo-list/torneo-list';
 import { TorneoDetails } from './pages/torneo/torneo-details/torneo-details';
 import { JugadorList } from './pages/jugador/jugador-list/jugador-list';
 import { JugadorDetails } from './pages/jugador/jugador-details/jugador-details';
+import { UsuarioForm } from './pages/usuario/usuario-form/usuario-form';
+import { UsuarioHome } from './pages/usuario/usuario-home/usuario-home';
 
 export const routes: Routes = [
     {path: 'es', 
@@ -28,5 +30,7 @@ export const routes: Routes = [
     {path: 'equipo/formulario', component: EquipoForm},
     {path: ' ', redirectTo: 'home', pathMatch: 'full'},
     {path: '**', redirectTo: 'home'},
-    //{path:' ', redirectTo: 'home'}
+    {path: 'es/inicio-sesion', component: UsuarioForm},
+    {path: 'es/usuario-home', component: UsuarioHome},
+    {path:' ', redirectTo: 'home'}
 ];
