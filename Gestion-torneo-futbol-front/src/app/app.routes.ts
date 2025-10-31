@@ -9,6 +9,7 @@ import { JugadorList } from './pages/jugador/jugador-list/jugador-list';
 import { JugadorDetails } from './pages/jugador/jugador-details/jugador-details';
 import { UsuarioForm } from './pages/usuario/usuario-form/usuario-form';
 import { UsuarioHome } from './pages/usuario/usuario-home/usuario-home';
+import { UsuarioLogin } from './pages/usuario/usuario-login/usuario-login';
 
 export const routes: Routes = [
     {path: 'es', 
@@ -30,7 +31,7 @@ export const routes: Routes = [
     {path: 'equipo/formulario', component: EquipoForm},
     {path: ' ', redirectTo: 'home', pathMatch: 'full'},
     {path: '**', redirectTo: 'home'},
-    {path: 'es/inicio-sesion', component: UsuarioForm},
+    {path: 'es/inicio-sesion', component: UsuarioLogin},
     {path: 'es/usuario-home', component: UsuarioHome},
     {path:' ', redirectTo: 'home'}
 ];

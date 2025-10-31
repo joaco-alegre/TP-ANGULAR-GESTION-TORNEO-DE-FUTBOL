@@ -1,6 +1,6 @@
-<h2>{{ torneoID ? 'Editar Torneo' : 'Agregar Torneo' }}</h2>
+<h2>{{ jugadorID ? 'Editar Jugador' : 'Agregar Jugador' }}</h2>
 
-<form [formGroup]="torneoForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="jugadorForm" (ngSubmit)="onSubmit()">
 
   <label for="id">Id</label>
   <input id="id" formControlName="id">
@@ -17,7 +17,7 @@
   <label for="estadoTorneo">Estado del Torneo</label>
   <input type="">
 
-  <button type="submit">{{ torneoID ? 'Actualizar' : 'Agregar' }}</button>
+  <button type="submit">{{ jugadorID ? 'Actualizar' : 'Agregar' }}</button>
 </form>
 
 

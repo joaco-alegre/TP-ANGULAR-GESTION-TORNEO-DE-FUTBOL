@@ -1,26 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ɵInternalFormsSharedModule, ReactiveFormsModule } from '@angular/forms';
+import { TorneoService } from '../../../service/torneo-service/torneo-service';
+import { ActivatedRoute, Router } from '@angular/router';
+import Jugador from '../../../model/jugador';
+import { JugadorService } from '../../../service/jugador-service/jugador-service';
 
 @Component({
   selector: 'app-jugador-form',
-  imports: [],
+  imports: [ɵInternalFormsSharedModule, ReactiveFormsModule],
   templateUrl: './jugador-form.html',
   styleUrl: './jugador-form.css'
 })
 export class JugadorForm implements OnInit{
 
   
-  torneoForm!: FormGroup;
-  torneoID?: number;
+  jugadorForm!: FormGroup;
+  jugadorID?: number;
 
   constructor(
     private fb: FormBuilder,
-    private torneoService: TorneoService,
+    private jugadorService: JugadorService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.torneoForm = this.fb.group({
+    this.jugadorForm = this.fb.group({
       id: ['', [Validators.required]],
       nombre: ['', [Validators.required]],
       nombreTorneo: ['', [Validators.required]],
@@ -36,22 +41,22 @@ export class JugadorForm implements OnInit{
 
   onSubmit(): void {
   
-    if (this.torneoForm.invalid) return;
+    if (this.jugadorForm.invalid) return;
 
-    if (this.torneoForm) {
+    if (this.jugadorForm) {
 
-      const torneoData: Torneo = { id: this.torneoID, ...this.torneoForm.value }; 
+      const jugadorData: Jugador = { id: this.jugadorID, ...this.jugadorForm.value }; 
 
-      this.torneoService.updateTorneo(torneoData).subscribe({
-        next: () => this.router.navigate(['/es/torneos']),
-        error: (e) => {console.log(e)} });
+      this.jugadorService.updateJugador(jugadorData).subscribe({
+        next: () => this.router.navigate(['/es/jugadores']),
+        error: () => {console.log()} });
 
     } else {
 
-      const torneoData = this.torneoForm;
+      const jugadorData = this.jugadorForm;
       
-      this.torneoService.postTorneo(torneoData).subscribe({
-        next: () => this.router.navigate(['/es/torneos']),
+      this.jugadorService.postJugador(jugadorData).subscribe({
+        next: () => this.router.navigate(['/es/jugador']),
         error: (e) => {console.log(e)} });
     }
   }
