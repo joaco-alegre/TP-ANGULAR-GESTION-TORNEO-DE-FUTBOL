@@ -8,6 +8,7 @@ import dt from '../../../model/dt';
 import DT from '../../../model/dt';
 import Fixture from '../../../model/fixture';
 import { Title } from '@angular/platform-browser';
+import { TorneoService } from '../../../service/torneo-service/torneo-service';
 
 @Component({
   selector: 'app-list',
@@ -15,46 +16,62 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './equipo-list.html',
   styleUrl: './equipo-list.css'
 })
-export class EquipoList implements OnInit{
-
+export class EquipoList  {
+/*
   @Input() id!: string;
 
-  torneo?: Torneo;
-  equipo?: Equipo;
-  directorT?: DT;
+  torneo: Torneo | undefined;
+  id: string | null = null;
 
   todosEquipos: Equipo[] = [];
   filtrarEquipos: Equipo[] = [];
 
 
   constructor(private equipoService: EquipoService,
+              private torneoService: TorneoService,
               private route: ActivatedRoute,
               private tituloService: Title
   ) {}
 
 ngOnInit(): void {
-    console.log('ID del torneo recibido:', this.id);
+  // 1. Obtenemos el ID de la URL de forma segura
+  this.id = this.route.snapshot.paramMap.get('id');
 
-    this.equipoService.getEquipos().subscribe(data => {
-      
-      console.log('Datos recibidos del servicio:', data); 
-      this.todosEquipos = data;
-      
-      this.filtrarEquiposPorTorneo(); 
-
-      if (this.filtrarEquipos.length > 0) {
-
-        const nombreTorneo = this.filtrarEquipos[0].nombreTorneo;
-        this.tituloService.setTitle(`Equipos de ${nombreTorneo}`);
-
-      } else {
-
-        this.tituloService.setTitle('Torneo no encontrado');
-
-      }
-
-    });
+  // 2. Si no hay ID, no hacemos nada
+  if (!this.id) {
+    console.error('No se encontró ID en la URL');
+    this.tituloService.setTitle('Torneo no encontrado');
+    return;
   }
+
+  console.log('ID del torneo recibido:', this.id);
+
+  // 3. --- ESTO ES LO NUEVO ---
+  // Buscamos los detalles del torneo usando su ID
+  this.torneoService.getTorneoById(this.id).subscribe(torneoEncontrado => {
+    
+    // 4. ¡Guardamos el torneo! 
+    // Ahora tu HTML @if(torneo) funcionará
+    this.torneo = torneoEncontrado; 
+    
+    // 5. Ponemos el título (esta forma es más segura)
+    if (torneoEncontrado) {
+      this.tituloService.setTitle(`Torneo: ${torneoEncontrado.nombre}`);
+    } else {
+      this.tituloService.setTitle('Torneo no encontrado');
+    }
+  });
+
+  // 6. --- TU CÓDIGO EXISTENTE ---
+  // Hacemos la llamada para traer los equipos
+  this.equipoService.getEquipos().subscribe(data => {
+    console.log('Datos recibidos del servicio:', data); 
+    this.todosEquipos = data;
+    
+    // Filtramos los equipos que pertenecen a este torneo
+    this.filtrarEquiposPorTorneo(); 
+  });
+}
 
   filtrarEquiposPorTorneo(): void {
     if (this.id) {

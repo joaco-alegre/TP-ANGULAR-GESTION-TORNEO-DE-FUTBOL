@@ -27,11 +27,77 @@
 
 /* ESTILO DEL BOTÓN ACTIVO */
 .role-btn.active {
-  background-color: #007bff; /* Color de tu app (ej. azul) */
+  background-color: #00334e; /* Color de tu app (ej. azul) */
   color: white;
 }
 
 /* (Opcional) Le da un pequeño margen al primer botón */
 .role-btn:first-child {
   border-right: 1px solid #ddd;
+}
+
+
+.login-container {
+  /* Tamaño y Centrado */
+  max-width: 400px; /* Ancho máximo del formulario */
+  margin: 40px auto;  /* Centra horizontalmente y da espacio arriba/abajo */
+  
+  /* Estilo de la tarjeta */
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 2. Estilos para el Formulario --- */
+
+/* Centra el título */
+.login-container h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Estilo de las etiquetas (Email, Contraseña) */
+form label {
+  display: block; /* Hace que ocupe su propia línea */
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* Estilo de los campos de texto */
+form input[type="email"],
+form input[type="password"] {
+  display: block; /* Ocupa su propia línea */
+  width: 100%;    /* Ocupa el 100% del ancho del formulario */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 20px; /* Espacio antes del siguiente elemento */
+  
+  /* Importante para que el padding no rompa el ancho */
+  box-sizing: border-box; 
+}
+
+/* Estilo del botón de Ingresar */
+form button[type="submit"] {
+  width: 100%; /* Ocupa todo el ancho */
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #034c69; /* Mismo azul que el botón activo */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 10px; /* Espacio extra arriba del botón */
+}
+
+form button[type="submit"]:hover {
+  background-color: #00263a;
+  transform: scale(1.03);
+  /* Un azul más oscuro al pasar el mouse */
 }

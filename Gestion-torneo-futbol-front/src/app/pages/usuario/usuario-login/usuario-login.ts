@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, ɵInternalFormsSharedModule, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-usuario-login',
@@ -16,11 +16,19 @@ export class UsuarioLogin{
   selectedRole: 'usuario' | 'dt' = 'usuario'; 
 
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
   setRole(role: 'usuario' | 'dt') {
     this.selectedRole = role;
+  }
+
+  tuFuncion() {
+    // ... aquí va tu lógica (guardar, validar, etc.)
+    
+    // ... y cuando terminas...
+    
+    // 4. Navegas a la nueva ruta
+    this.router.navigate(['/usuario-home']); 
   }
 
   onSubmit() {
@@ -39,7 +47,7 @@ export class UsuarioLogin{
       
       // Si el login es exitoso, NAVEGA DESDE AQUÍ
       // (¡Mira la nota importante al final!)
-      this.router.navigate(['/es/usuario-home']);
+      this.router.navigate(['/usuario-home']);
     }
   }
 }

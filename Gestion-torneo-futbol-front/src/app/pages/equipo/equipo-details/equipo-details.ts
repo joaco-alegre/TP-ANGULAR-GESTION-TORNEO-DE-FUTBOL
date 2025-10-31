@@ -3,6 +3,13 @@ import Equipo from '../../../model/equipo';
 import { EquipoService } from '../../../service/equipo-service/equipo-service';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { DtService } from '../../../service/dt-service/dt-service';
+import { JugadorService } from '../../../service/jugador-service/jugador-service';
+import { FixtureService } from '../../../service/fixture-service/fixture-service';
+import { Title } from '@angular/platform-browser';
+import Jugador from '../../../model/jugador';
+import Fixture from '../../../model/fixture';
+import DT from '../../../model/dt';
 
 @Component({
   selector: 'app-details',
@@ -12,20 +19,95 @@ import { CommonModule } from '@angular/common';
 })
 export class EquipoDetails implements OnInit{
 
-  equipo?: Equipo;
+  equipo: Equipo | undefined;
+  dt: DT | undefined;
+  filtrarJugadores: Jugador[] = [];
+  fixtures: Fixture[] = [];
+
+  id: string | null = null; 
+
+  private todosDts: DT[] = [];
+  private todosJugadores: Jugador[] = [];
+  private todosFixtures: Fixture[] = [];
 
   constructor(
+    private route: ActivatedRoute,
     private equipoService: EquipoService,
-    private route: ActivatedRoute
-  ) {}
+    private dtService: DtService,
+    private jugadorService: JugadorService,
+    private fixtureService: FixtureService, 
+    private tituloService: Title
+  ) { }
+
+  ngOnInit(): void {
+
+    this.id = this.route.snapshot.paramMap.get('id');
+
+    if (!this.id) {
+      console.error('No se encontró ID de equipo en la URL');
+      this.tituloService.setTitle('Equipo no encontrado');
+      return;
+    }
+
+    console.log('ID del equipo recibido:', this.id);
+
+    this.equipoService.getEquipoById(this.id).subscribe(equipoEncontrado => {
+      this.equipo = equipoEncontrado;
+      if (equipoEncontrado) {
+        this.tituloService.setTitle(equipoEncontrado.nombre);
+      } else {
+        this.tituloService.setTitle('Equipo no encontrado');
+      }
+    });
+
+    this.dtService.getDTs().subscribe(data => { 
+      this.todosDts = data;
+      this.filtrarDtPorEquipo();
+    });
+
+    this.jugadorService.getJugadores().subscribe(data => { 
+      this.todosJugadores = data;
+      this.filtrarJugadoresPorEquipo();
+    });
+
+    this.fixtureService.getFixtures().subscribe(data => { 
+      this.todosFixtures = data;
+      this.filtrarFixturesPorEquipo();
+    });
+  }
+
+  filtrarDtPorEquipo(): void {
+
+    if (this.id) {
+      this.dt = this.todosDts.find(
+        (dt) => dt.equipoID === this.id
+      );
+      if (!this.dt) {
+        console.warn('No se encontró DT para este equipo.');
+      }
+    }
+  }
+
+  filtrarJugadoresPorEquipo(): void {
+    if (this.id) {
+      this.filtrarJugadores = this.todosJugadores.filter(
+        (jugador) => jugador.idEquipo === this.id 
+      );
+    }
+  }
 
   
-  ngOnInit(): void {
-    const id = this.route.snapshot.params['id'];
-    this.equipoService.getEquipoById(id).subscribe(data => this.equipo = data);
+  filtrarFixturesPorEquipo(): void {
+    if (this.id) {
+      this.fixtures = this.todosFixtures.filter(
+        (fixture) => fixture.equipoLocalID === this.id || fixture.equipoVisitaID === this.id 
+      );
+    }
   }
 
 }
+
+
 
 
 

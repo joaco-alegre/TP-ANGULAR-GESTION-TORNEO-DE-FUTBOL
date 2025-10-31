@@ -65,3 +65,21 @@ h2 {
     padding: 0 15px; /* Damos espacio a los costados */
   }
 }
+
+
+h2 {
+  text-align: center;
+  /* Fuente más moderna y limpia */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* Color más suave que el negro puro */
+  color: #2c3e50; 
+  
+  /* Tamaño y peso */
+  font-size: 2.5rem; /* Un poco más grande */
+  font-weight: 600;  /* Un grosor intermedio */
+  
+  /* Espaciado */
+  margin-top: 20px;
+  margin-bottom: 40px; /* Más espacio antes de los botones */
+}

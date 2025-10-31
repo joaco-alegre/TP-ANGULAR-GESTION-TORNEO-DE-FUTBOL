@@ -5,5 +5,7 @@
     <li [routerLink]="['/es/torneos/', torneo.id]">
       {{torneo.nombre}}
     </li>
-    }
+    } @empty {
+    <p>No hay torneos registrados en este momento.</p>
+  }
 </ul>

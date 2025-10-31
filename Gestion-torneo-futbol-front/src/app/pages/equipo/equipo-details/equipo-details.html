@@ -1,8 +1,74 @@
+<div class="detalle-container">
+
+  <h2 class="titulo-torneo">{{equipo?.nombre}}</h2>
+
+<h3 class="section-title">Detalles del equipo</h3>
 
 @if(equipo){
-    <div>
-    <p><b>ID:</b> {{ equipo.id }}</p>
-    <p><b>Título:</b> {{ equipo.nombre }}</p>
-    <p><b>Año:</b> {{ equipo.nombreTorneo }}</p>
+  <div class="details-card-wrapper"> <div class="equipo-card">
+      
+      <img [src]="equipo.escudo || 'ruta/a/placeholder.png'" [alt]="'Escudo de ' + equipo.nombre" class="equipo-card-logo">
+      
+      <div class="equipo-card-info">
+        <h4>{{ equipo.nombre }}</h4>
+        <p><b>Torneo:</b> {{ equipo.nombreTorneo }}</p>
+      </div>
+
+    </div>
   </div>
 }
+
+  <h3 class="section-title">Director Técnico</h3>
+
+  @if(dt){
+    <div class="dt-card-wrapper">
+      <div class="dt-card">
+        <img [src]="dt.foto || 'ruta/a/placeholder.png'" alt="Foto de {{dt?.nombre}}" class="dt-foto">
+        <div class="dt-info">
+          <h4>{{ dt?.nombre }}</h4>
+          <p><b>Estilo:</b> {{ dt?.estiloJuego}}</p>
+          </div>
+      </div>
+    </div>
+  }
+
+  <!-- } @empty {
+      <p class="empty-list">No hay un DT asignado a este equipo.</p>
+  } -->
+
+  <h2 class="section-title">Lista de Jugadores</h2>
+
+  <div class="jugador-list-wrapper">
+    <ul class="jugador-list">
+      @for (jugador of filtrarJugadores; track jugador.id) {
+        <li [routerLink]="['/es/jugadores/', jugador.id]">
+          <img 
+            [src]="jugador?.foto" 
+            [alt]="'Foto de ' + jugador?.nombre" 
+            class="jugador-foto"> 
+          <span class="jugador-name">{{ jugador.nombre }}</span>
+        </li>
+      } @empty {
+        <p class="empty-list">No hay jugadores registrados en este equipo.</p>
+      }
+    </ul>
+  </div>
+
+  <h2 class="section-title">Fixture</h2>
+
+  <div class="fixture-list-wrapper">
+    <ul class="fixture-list">
+      @for (fixture of fixtures; track fixture.id) {
+        <li class="fixture-item" [routerLink]="['es/fixture/', fixture.id]">
+          <img src="" alt="">
+          <!-- <span class="fixture-rivales">{{ fixture.equipoLocalID }} vs {{ fixture.equipoVisitante }}</span> -->
+          <span class="fixture-estado">{{ fixture.estadoPartido }}</span>
+          <img src="" alt="">
+        </li>
+      } @empty {
+        <p class="empty-list">No hay fixtures cargados para este equipo.</p>
+      }
+    </ul>
+  </div>
+
+</div>

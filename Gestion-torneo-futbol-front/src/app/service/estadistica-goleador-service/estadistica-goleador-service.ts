@@ -1,11 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-estadistica-goleador-service',
-  imports: [],
-  templateUrl: './estadistica-goleador-service.html',
-  styleUrl: './estadistica-goleador-service.css'
+@Injectable({
+  providedIn: 'root'
 })
+
 export class EstadisticaGoleadorService {
 
 }

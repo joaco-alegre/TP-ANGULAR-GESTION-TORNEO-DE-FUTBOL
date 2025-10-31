@@ -4,4 +4,6 @@ export default interface Torneo{
   fechaInicio: Date;
   fechaFin: Date;
   estadoTorneo: string;
+  logo?: string;          
+  ultimoCampeon?: string;
 }

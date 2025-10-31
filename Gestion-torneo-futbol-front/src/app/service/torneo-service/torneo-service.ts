@@ -18,7 +18,7 @@ export class TorneoService{
     return this.http.get<Torneo[]>(this.url);
   }
 
-  getTorneoById(id: number): Observable<Torneo> {
+  getTorneoById(id: string): Observable<Torneo> {
     return this.http.get<Torneo>(`${this.url}/${id}`);
   }
 

@@ -10,6 +10,7 @@ import { JugadorDetails } from './pages/jugador/jugador-details/jugador-details'
 import { UsuarioForm } from './pages/usuario/usuario-form/usuario-form';
 import { UsuarioHome } from './pages/usuario/usuario-home/usuario-home';
 import { UsuarioLogin } from './pages/usuario/usuario-login/usuario-login';
+import { FixtureDetails } from './pages/fixture/fixture-details/fixture-details';
 
 export const routes: Routes = [
     {path: 'es', 
@@ -22,16 +23,18 @@ export const routes: Routes = [
     component: TorneoList,
     title: 'Torneos - Goal Manager'},
     {path: 'es/torneos/:id',
-    component: EquipoList,
-    title: 'Equipos - Goal Manager'},
+    component: TorneoDetails},
     {path: 'es/torneo/details/:id', component: TorneoDetails},
-    {path: 'es/equipos/:id', component: JugadorList},
+    {path: 'es/equipos/:id', component: EquipoDetails},
     {path: 'es/jugadores/:id', component: JugadorDetails},
     {path: 'equipos/:id', component: EquipoDetails},
+    {path: 'fixture/:id', component: FixtureDetails},
     {path: 'equipo/formulario', component: EquipoForm},
     {path: ' ', redirectTo: 'home', pathMatch: 'full'},
     {path: '**', redirectTo: 'home'},
-    {path: 'es/inicio-sesion', component: UsuarioLogin},
-    {path: 'es/usuario-home', component: UsuarioHome},
+    {path: 'es/inicio-sesion',
+    title: 'Iniciar sesion - Goal Manager',
+    component: UsuarioLogin},
+    {path: 'usuario-home', component: UsuarioHome,},
     {path:' ', redirectTo: 'home'}
 ];

@@ -6,4 +6,5 @@ export default interface Jugador{
   numeroCamiseta: number;
   posicion: string;
   idEquipo: string;
+  foto: string;
 }

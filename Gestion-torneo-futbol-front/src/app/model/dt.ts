@@ -3,5 +3,6 @@ export default interface DT{
   nombre: string;
   equipoID?: string;
   estiloJuego: string,
-  usuario: string 
+  usuario: string;
+  foto:string;
 }
