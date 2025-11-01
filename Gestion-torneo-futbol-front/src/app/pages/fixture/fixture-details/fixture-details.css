@@ -1,0 +1,109 @@
+
+.detalle-container {
+  width: 90%;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.marcador-detalle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.equipo-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%; 
+}
+
+.equipo-info img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.equipo-nombre {
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  color: #333;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #111;
+}
+
+.goles {
+  font-size: 3rem; 
+}
+
+.separador {
+  font-size: 2rem;
+  margin: 0 20px;
+}
+
+.info-adicional {
+  text-align: center;
+  color: #555;
+  border-top: 1.5px solid #00334e;
+  padding-top: 20px;
+}
+
+.info-adicional p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+.btn-volver {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #00334e;
+  cursor: pointer;
+  margin: 10px 0 0 10px;
+}
+.btn-volver:hover {
+  text-decoration: underline;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+
+
+
+.equipo-info a {
+  text-decoration: none; /* Quita el subrayado del enlace */
+  display: inline-block; /* Asegura que se comporte bien */
+}
+
+.equipo-info img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  
+  cursor: pointer; /* <-- Muestra la manito al pasar el mouse */
+  transition: transform 0.2s ease-out; /* <-- Efecto suave */
+}
+
+/* Efecto visual al pasar el mouse sobre el escudo */
+.equipo-info a:hover img {
+  transform: scale(1.05);
+}

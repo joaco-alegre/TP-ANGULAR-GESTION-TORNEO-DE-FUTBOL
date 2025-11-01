@@ -1,0 +1,110 @@
+/* Contenedor principal */
+.detalle-jugador-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.titulo-pagina {
+  border-bottom: 1.5px solid #00334e;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Estilo base de las tarjetas */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  overflow: hidden; /* Importante para que la imagen no se desborde */
+}
+
+.card-foto {
+  flex-basis: 200px; /* Ancho fijo para la foto */
+  flex-shrink: 0;
+  background-color: #f4f4f4; 
+  display: flex; /* <-- Hacemos el contenedor flex */
+  justify-content: center; /* <-- Centra la imagen horizontalmente */
+  align-items: center; /* <-- Centra la imagen verticalmente */
+  
+  padding: 10px;/* Color de fondo mientras carga la img */
+}
+
+.card-foto img {
+  width: 350px; 
+  height: 350px; 
+  
+  border-radius: 8px; 
+  object-fit: cover; 
+  border: 1px solid #e0e0e0; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
+}
+
+.card-info {
+  padding: 24px;
+}
+
+.card-info h3,
+.card-estadisticas h3 {
+  margin-top: 0;
+  color: #1a1a1a;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 8px;
+}
+
+/* Lista de información (edad, etc.) */
+.info-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-lista li {
+  font-size: 1rem;
+  color: #555;
+  padding: 8px 0;
+}
+.info-lista li b {
+  color: #333;
+  width: 120px;
+  display: inline-block; /* Para alinear los valores */
+}
+
+/* Tarjeta de estadísticas */
+.card-estadisticas {
+  padding: 24px;
+}
+
+.stats-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex; /* Para poner stats en línea si agregas más */
+  gap: 20px;
+}
+
+.stats-lista li {
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.stat-numero {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0056b3; /* Un color destacado para el número */
+  margin-left: 10px;
+}
+
+.info-lista li a {
+  color: #0056b3; /* Un color de enlace que combine */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.info-lista li a:hover {
+  text-decoration: underline;
+}

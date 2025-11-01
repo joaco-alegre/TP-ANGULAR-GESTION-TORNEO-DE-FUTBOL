@@ -24,11 +24,12 @@ export const routes: Routes = [
     title: 'Torneos - Goal Manager'},
     {path: 'es/torneos/:id',
     component: TorneoDetails},
-    {path: 'es/torneo/details/:id', component: TorneoDetails},
     {path: 'es/equipos/:id', component: EquipoDetails},
     {path: 'es/jugadores/:id', component: JugadorDetails},
-    {path: 'equipos/:id', component: EquipoDetails},
-    {path: 'fixture/:id', component: FixtureDetails},
+    {path: 'es/fixture/:id', component: FixtureDetails},
+
+
+    
     {path: 'equipo/formulario', component: EquipoForm},
     {path: ' ', redirectTo: 'home', pathMatch: 'full'},
     {path: '**', redirectTo: 'home'},

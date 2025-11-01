@@ -1,22 +1,51 @@
-<h2>{{jugador?.nombre}}</h2>
+@if (jugador) {
 
-<h3>Detalles del Jugador</h3>
-@if(jugador){
-    <div>
-    <img src="" alt="">
-    <p><b>Nombre:</b> {{ jugador.nombre }}</p>
-    <p><b>Edad:</b> {{ jugador.edad }}</p>
-    <p><b>Nombre:</b> {{ jugador.fechaNacimiento}}</p>
-    <p><b>Numero de Camiseta:</b> {{ jugador.numeroCamiseta}}</p>
+  <div class="detalle-jugador-container">
+
+    <h2 class="titulo-pagina">{{ jugador.nombre }}</h2>
+
+    <div class="card card-detalles">
+      
+      <div class="card-foto">
+        <img [src]="jugador.foto" [alt]="'Foto de ' + jugador.nombre">
+      </div>
+
+      <div class="card-info">
+        <h3>Detalles del Jugador</h3>
+        <ul class="info-lista">
+          <li>
+            <b>Edad:</b> {{ jugador.edad }}
+          </li>
+          <li>
+            <b>Nacimiento:</b> {{ jugador.fechaNacimiento}}
+          </li>
+
+          <li>
+            <b>Equipo:</b>
+            <a [routerLink]="['/es/equipos/', equipoDelJugador?.id]">
+              {{ equipoDelJugador?.nombre }}
+            </a>
+          </li>
+
+          <li>
+            <b>Camiseta:</b> N° {{ jugador.numeroCamiseta }}
+          </li>
+</ul>
+      </div>
+    </div>
+
+      <div class="card card-estadisticas">
+        <h3>Estadísticas del Jugador</h3>
+        <ul class="stats-lista">
+          <li>
+            <b>Goles Totales:</b>
+            <span class="stat-numero">{{ estadisticaGoleador?.cantidadGoles}}</span>
+          </li>
+          </ul>
+      </div>
+
   </div>
+
+} @else {
+  <p class="empty-list">Cargando datos del jugador...</p>
 }
-
-
-<h3>Estadisticas del jugador</h3>
-
-@if(estadisticaGoleador){
-    <div>
-    <p><b>cantidad de Goles:</b> {{ estadisticaGoleador.cantidadGoles }}</p>
-  </div>
-}
-

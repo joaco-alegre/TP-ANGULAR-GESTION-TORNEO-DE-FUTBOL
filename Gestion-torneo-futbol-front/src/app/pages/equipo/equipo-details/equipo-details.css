@@ -23,7 +23,7 @@
   color: #333;
   max-width: 700px; /* <-- El ancho que te gustó */
   margin: 40px auto 20px auto; 
-  border-bottom: 2px solid #eee;
+  border-bottom: 1.5px solid #00334e;
   padding-bottom: 10px;
 }
 
@@ -162,4 +162,61 @@
   color: #2c3e50;
   font-size: 1.1rem;
   font-weight: 600;
+}
+
+/* la parte del fixture*/
+
+.fixture-item {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  padding: 15px 25px;
+  margin-bottom: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fixture-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fixture-item img {
+  /* Dales un tamaño fijo a los escudos */
+  width: 40px;
+  height: 40px;
+  object-fit: contain; /* Para que la imagen no se deforme */
+}
+
+.fixture-marcador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px; /* Espacio entre los goles y el estado */
+  
+  /* Opcional: le damos un ancho fijo para que no se mueva
+     si el texto del estado es corto o largo */
+  min-width: 150px; 
+  text-align: center;
+}
+
+.fixture-goles {
+  font-size: 1.3rem;  /* Más grandes */
+  font-weight: 700; /* En negrita */
+  width: 30px; /* Ancho fijo para alinear */
+  text-align: center;
+}
+
+.fixture-estado {
+  /* Estilos para el texto del medio */
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  
+  /* Opcional: para asegurarnos de que no se pegue a los escudos 
+  margin: 0 10px; */
 }

@@ -29,6 +29,7 @@ export class EquipoDetails implements OnInit{
   private todosDts: DT[] = [];
   private todosJugadores: Jugador[] = [];
   private todosFixtures: Fixture[] = [];
+  private todosEquipos: Equipo[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -36,7 +37,7 @@ export class EquipoDetails implements OnInit{
     private dtService: DtService,
     private jugadorService: JugadorService,
     private fixtureService: FixtureService, 
-    private tituloService: Title
+    private tituloService: Title,
   ) { }
 
   ngOnInit(): void {
@@ -74,6 +75,11 @@ export class EquipoDetails implements OnInit{
       this.todosFixtures = data;
       this.filtrarFixturesPorEquipo();
     });
+
+    this.equipoService.getEquipos().subscribe((data: Equipo[]) => {
+      this.todosEquipos = data;
+    });
+
   }
 
   filtrarDtPorEquipo(): void {
@@ -104,6 +110,15 @@ export class EquipoDetails implements OnInit{
       );
     }
   }
+
+getEscudo(equipoID: string): string {
+  const equipo = this.todosEquipos.find(data => equipoID === data.id);
+  
+  if (equipo && equipo.escudo) {
+    return equipo.escudo;
+  }
+  return 'assets/escudos/default.png'; 
+}
 
 }
 

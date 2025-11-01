@@ -1,1 +1,40 @@
-<p>fixture-details works!</p>
+
+<button (click)="goBack()" class="btn-volver">&larr; Volver</button>
+
+<div *ngIf="fixture && equipoLocal && equipoVisitante" class="detalle-container">
+
+<div class="marcador-detalle">
+
+  <div class="equipo-info local">
+    <a [routerLink]="['/es/equipos', equipoLocal.id]">
+      <img [src]="equipoLocal.escudo" [alt]="equipoLocal.nombre">
+    </a>
+    <h2 class="equipo-nombre">{{ equipoLocal.nombre }}</h2>
+  </div>
+
+  <div class="score">
+    </div>
+
+  <div class="equipo-info visitante">
+    <a [routerLink]="['/es/equipos', equipoVisitante.id]">
+      <img [src]="equipoVisitante.escudo" [alt]="equipoVisitante.nombre">
+    </a>
+    <h2 class="equipo-nombre">{{ equipoVisitante.nombre }}</h2>
+  </div>
+
+</div>
+
+  <div class="info-adicional">
+    <p>
+      <strong>Estado:</strong> {{ fixture?.estadoPartido }}
+    </p>
+    <p>
+      <strong>Fecha:</strong> {{ fixture?.fechaPartido}} hs
+    </p>
+  </div>
+
+</div>
+
+<div *ngIf="!fixture" class="loading">
+  <p>Cargando detalles del partido...</p>
+</div>
